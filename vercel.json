@@ -1,0 +1,7 @@
+{
+  "outputDirectory": "web",
+  "framework": null,
+  "routes": [
+    { "src": "/sw.js", "headers": { "Service-Worker-Allowed": "/" } }
+  ]
+}
