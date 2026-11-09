@@ -1,0 +1,81 @@
+# VERDIX ECOSYSTEM — .gitignore
+# ============================================================
+
+# Dependencias y caché
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Variables de entorno y secretos (NUNCA subir)
+.env
+.env.*
+!.env.example
+*.env.local
+*.env.*.local
+
+# Credenciales y claves
+*.pem
+*.key
+*.crt
+*.pfx
+*.secrets
+credentials*
+secret*
+token*
+
+# Build y artefactos
+build/
+dist/
+out/
+*.iso
+*.img
+*.zip
+*.tar.gz
+*.tar.bz2
+*.apk
+*.exe
+*.dmg
+*.deb
+
+# Copias de seguridad y respaldos
+backup*/
+*.bak
+*.respaldo
+.respaldo*/
+06-RESPALDOS/
+
+# IDE y editores
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+logs/
+*.log.txt
+
+# Live-build
+.config/
+.chroot/
+.binary/
+.auto/
+.local/
+
+# Python
+.pytest_cache/
+.tox/
+.coverage
+htmlcov/
+
+# Vercel
+.vercel/
+project.json
