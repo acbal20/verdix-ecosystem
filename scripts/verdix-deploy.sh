@@ -104,21 +104,40 @@ run_tests() {
 
 audit_secrets() {
     log "Auditoría de secretos (sin mostrar valores)..."
-    local patterns=("API_KEY" "SECRET" "PASSWORD" "passwd" "token" "sk-" "ghp_")
     local found=0
 
-    for p in "${patterns[@]}"; do
-        while IFS= read -r -d '' f; do
-            # Saltar .env.example (plantilla sin valores) y .git
-            if [[ "$f" == *".env.example"* ]] || [[ "$f" == *".git/"* ]]; then
-                continue
-            fi
-            if grep -qiE "$p" "$f" 2>/dev/null; then
-                warn "Posible secreto en: $f (valor no mostrado)"
-                found=1
-            fi
-        done < <(find "$REPO_DIR" -type f -not -path "*/.git/*" -not -path "*/__pycache__/*" -print0 2>/dev/null)
-    done
+    # 1. Buscar archivos .env reales (no .env.example)
+    while IFS= read -r -d '' f; do
+        if [[ "$f" == *".env.example"* ]]; then
+            continue
+        fi
+        if [[ "$f" == *".env" ]] || [[ "$f" == *.env.* ]]; then
+            warn "Archivo de entorno real detectado (no subir): $f"
+            found=1
+        fi
+    done < <(find "$REPO_DIR" -type f -not -path "*/.git/*" -print0 2>/dev/null)
+
+    # 2. Buscar patrones de claves/tokens con formato real (sk-, ghp_, vercel_)
+    while IFS= read -r -d '' f; do
+        if [[ "$f" == *".env.example"* ]] || [[ "$f" == *".git/"* ]] || [[ "$f" == *".md" ]]; then
+            continue
+        fi
+        if grep -qiE "(sk-[A-Za-z0-9]{20,}|ghp_[A-Za-z0-9]{20,}|vercel_[A-Za-z0-9]{20,}|eyJ[A-Za-z0-9_-]+\.[A-Za-z0-9_-]+\.[A-Za-z0-9_-]+)" "$f" 2>/dev/null; then
+            warn "Posible clave/token con formato real en: $f (valor no mostrado)"
+            found=1
+        fi
+    done < <(find "$REPO_DIR" -type f -not -path "*/.git/*" -not -path "*/__pycache__/*" -print0 2>/dev/null)
+
+    # 3. Buscar asignaciones de valores a variables de secretos (API_KEY=, SECRET=, PASSWORD=, TOKEN=)
+    while IFS= read -r -d '' f; do
+        if [[ "$f" == *".env.example"* ]] || [[ "$f" == *".git/"* ]] || [[ "$f" == *.md ]] || [[ "$f" == *.gitignore ]]; then
+            continue
+        fi
+        if grep -qiE "^[[:space:]]*(API_KEY|SECRET|PASSWORD|passwd|TOKEN|SECRET_KEY)[[:space:]]*=" "$f" 2>/dev/null; then
+            warn "Posible asignación de secreto en: $f (valor no mostrado)"
+            found=1
+        fi
+    done < <(find "$REPO_DIR" -type f -not -path "*/.git/*" -not -path "*/__pycache__/*" -print0 2>/dev/null)
 
     if [ "$found" -ne 0 ]; then
         err "Se detectaron posibles secretos. Revisar antes de publicar."
