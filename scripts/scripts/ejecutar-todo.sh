@@ -11,13 +11,15 @@ echo "============================================"
 echo ""
 
 # Paso 1: Verificar y corregir
-echo_color() {
-    echo -e "${1}${2}${NC}
-}
 NC='\033[0m'
 VERDE='\033[0;32m'
 ROJO='\033[0;31m'
 AMARILLO='\033[1;33m'
+AZUL='\033[0;34m'
+
+echo_color() {
+    echo -e "${1}${2}${NC}"
+}
 
 echo_color $AMARILLO "📋 Paso 1: Ejecutando autobot de validación..."
 cd /home/yeremy/verdix-automation/scripts
