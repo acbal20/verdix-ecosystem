@@ -79,3 +79,6 @@ htmlcov/
 # Vercel
 .vercel/
 project.json
+.vercel
+.env*
+.env.local
