@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#05081c">
+<title>VERDIX Benchmark · Laboratorio Universal de Rendimiento</title>
+<meta name="description" content="Benchmarks reales medidos en hardware local: C, Python y JavaScript comparados con mediana, desviación y memoria máxima residente.">
+<link rel="icon" href="../icon-192.png" onerror="this.style.display='none'">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+  <div class="wrap head-row">
+    <div class="brand">
+      <div class="logo">VB</div>
+      <div>
+        <h1>VERDIX <span class="grad">BENCHMARK</span></h1>
+        <p class="tag">Laboratorio universal de rendimiento · medido, no inventado</p>
+      </div>
+    </div>
+    <nav>
+      <a href="../index.html" class="ghost">← VERDIX</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <section class="kpis" id="kpis"></section>
+
+  <section class="panel">
+    <div class="panel-head">
+      <h2>⏱ Tiempo mediano por benchmark</h2>
+      <label class="switch"><input type="checkbox" id="logScale"> Escala logarítmica</label>
+    </div>
+    <div class="chart-box"><canvas id="timeChart"></canvas></div>
+  </section>
+
+  <section class="panel">
+    <h2>💾 Memoria máxima residente (RSS promedio)</h2>
+    <div class="chart-box small"><canvas id="memChart"></canvas></div>
+  </section>
+
+  <section class="panel">
+    <h2>📊 Resultados completos</h2>
+    <div class="table-scroll"><table id="resTable">
+      <thead><tr><th>Benchmark</th><th>Lenguaje</th><th>Mediana</th><th>Media</th><th>σ</th><th>P95</th><th>RSS</th><th>Ejec.</th></tr></thead>
+      <tbody></tbody>
+    </table></div>
+  </section>
+
+  <section class="panel verdict">
+    <h2>🧠 Veredicto adaptativo</h2>
+    <p class="note">Generado automáticamente a partir de las medianas medidas en este hardware (sin opiniones, sin marketing):</p>
+    <ul id="verdictList"></ul>
+    <div id="winnerLine"></div>
+  </section>
+
+  <section class="panel method">
+    <h2>🔬 Metodología y honestidad</h2>
+    <ul>
+      <li><b>Ejecución real</b> de procesos en este equipo vía <code>/usr/bin/time -v</code>; no hay números estimados.</li>
+      <li><b>Entrada reproducible</b>: arrays generados con semilla 42 (<code>random.bin</code> / <code>sorted.bin</code>); mismo SHA-256 para todos los lenguajes en cada benchmark.</li>
+      <li><b>N ejecuciones</b> por medición; se publica mediana, media, σ, p95 y RSS. σ alto = medición poco fiable, mirarla con lupa.</li>
+      <li><b>Comparables</b>: misma tarea, mismo tamaño, mismo algoritmo. Quicksort propio ≠ <code>Array.sort()</code> de Node.</li>
+      <li>Rust y Go <b>no están instalados</b> en este equipo: no aparecen. Nada se simula.</li>
+      <li>Rust y Go aparecerán cuando se instalen con autorización; el motor ya los detecta vía <code>bench.py list</code>.</li>
+      <li>Los benchmarks dependen del hardware/OS. No mezclar hardware distinto en el mismo gráfico sin advertirlo — <code>latest.json</code> guarda CPU/RAM/kernel en cada corrida.</li>
+    </ul>
+    <details>
+      <summary>Comando para reproducir estas cifras en tu equipo</summary>
+      <pre>git clone &lt;repo-verdix-ecosystem&gt;
+cd verdix-benchmark
+python3 bench.py list
+python3 bench.py hardware
+python3 bench.py run        # ~80 s en un Celeron 4205U
+python3 bench.py report</pre>
+    </details>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap foot-row">
+    <span>VERDIX Benchmark · experimento de medición honesta · $0 de presupuesto</span>
+    <span id="runId"></span>
+  </div>
+</footer>
+
+<script src="chart.umd.min.js"></script>
+<script src="results-data.js"></script>
+<script src="bench.js"></script>
+</body>
+</html>

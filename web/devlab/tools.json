@@ -1,0 +1,1086 @@
+[
+  {
+    "id": "opencode",
+    "name": "OpenCode",
+    "category": "agentes-ia",
+    "desc": "Agente de código en terminal de código abierto (CLI), multi-proveedor: funciona con Groq, Gemini u otros endpoints gratuitos. Es el agente usado para construir VERDIX.",
+    "site": "https://opencode.ai",
+    "open_source": true,
+    "license": "MIT",
+    "os": [
+      "linux",
+      "macos",
+      "windows"
+    ],
+    "free_plan": "Sí: 100% gratuito y de código abierto. El coste depende del proveedor de IA que enlaces (hay proveedores con API gratuita como Groq/Gemini).",
+    "is_free": true,
+    "paid_from": "Sin coste propio.",
+    "ai": true,
+    "requires_account": false,
+    "card_required": false,
+    "pros": [
+      "Gratis y código abierto",
+      "Terminal primero: encaja en flujos VERDIX",
+      "Funciona con proveedores gratuitos",
+      "Soporte multi-agente"
+    ],
+    "cons": [
+      "La calidad depende del modelo enlazado",
+      "Sin interfaz gráfica oficial completa"
+    ],
+    "alternatives": [
+      "cline",
+      "aider",
+      "cursor"
+    ],
+    "source": "https://opencode.ai",
+    "last_verified": "2026-11-19",
+    "verified": true
+  },
+  {
+    "id": "claude-code",
+    "name": "Claude Code",
+    "category": "agentes-ia",
+    "desc": "Agente de código de Anthropic en terminal. Instalación del CLI gratuita; el uso del modelo requiere plan de pago.",
+    "site": "https://claude.com/pricing",
+    "open_source": false,
+    "license": "Propietaria",
+    "os": [
+      "linux",
+      "macos",
+      "windows"
+    ],
+    "free_plan": "No para el uso del modelo: el plan Free de Claude NO incluye Claude Code. El CLI se descarga gratis pero trabajar con el modelo exige suscripción.",
+    "is_free": false,
+    "paid_from": "Pro ~US$20/mes (precio publicado; no verificado en detalle hoy)",
+    "ai": true,
+    "requires_account": true,
+    "card_required": true,
+    "pros": [
+      "Muy capaz en tareas grandes",
+      "Integración oficial con Claude",
+      "Agente maduro"
+    ],
+    "cons": [
+      "Sin plan gratuito para usar el modelo",
+      "Requiere tarjeta/suscripción",
+      "Consumir cuotas de pago contradice PRESUPUESTO $0"
+    ],
+    "alternatives": [
+      "opencode",
+      "aider",
+      "cline"
+    ],
+    "source": "https://claude.com/pricing",
+    "last_verified": "2026-11-19",
+    "verified": true
+  },
+  {
+    "id": "cursor",
+    "name": "Cursor",
+    "category": "agentes-ia",
+    "desc": "IDE basado en VS Code con agente de IA integrado. Freemium: tier gratuito con límites de peticiones, Pro desde ~US$20/mes.",
+    "site": "https://cursor.com",
+    "open_source": false,
+    "license": "Propietaria",
+    "os": [
+      "linux",
+      "macos",
+      "windows"
+    ],
+    "free_plan": "Tier gratuito con límites mensuales (completitud/chat). Pro: ~US$20/mes.",
+    "is_free": true,
+    "paid_from": "~US$20/mes",
+    "ai": true,
+    "requires_account": true,
+    "card_required": false,
+    "pros": [
+      "UI completa sobre VS Code",
+      "Autocompletado y agente potentes"
+    ],
+    "cons": [
+      "El tier gratis se agota",
+      "Código abierto NO"
+    ],
+    "alternatives": [
+      "opencode",
+      "vscode",
+      "vscodium"
+    ],
+    "source": "https://cursor.com",
+    "last_verified": null,
+    "verified": false
+  },
+  {
+    "id": "github-copilot",
+    "name": "GitHub Copilot",
+    "category": "agentes-ia",
+    "desc": "Asistente de código de GitHub/Microsoft. Plan Free con cuota mensual limitada; planes de pago para profesionales.",
+    "site": "https://github.com/features/copilot",
+    "open_source": false,
+    "license": "Propietaria",
+    "os": [
+      "linux",
+      "macos",
+      "windows"
+    ],
+    "free_plan": "Plan Free con cuota mensual (completions y chat limitados). Límites exactos publicados por GitHub.",
+    "is_free": true,
+    "paid_from": "Planes individuales desde ~US$10/mes (publicado; no verificado hoy)",
+    "ai": true,
+    "requires_account": true,
+    "card_required": false,
+    "pros": [
+      "Integración nativa en VS Code y GitHub",
+      "Plan Free usable para empezar"
+    ],
+    "cons": [
+      "Propietario",
+      "Cuota Free limitada"
+    ],
+    "alternatives": [
+      "opencode",
+      "cursor",
+      "cline"
+    ],
+    "source": "https://github.com/features/copilot",
+    "last_verified": null,
+    "verified": false
+  },
+  {
+    "id": "cline",
+    "name": "Cline",
+    "category": "agentes-ia",
+    "desc": "Extensión open source de VS Code: agente autónomo que lee/escribe archivos y ejecuta comandos. Gratuita; el coste lo marca el modelo que enlaces (puede ser gratuito).",
+    "site": "https://cline.bot",
+    "open_source": true,
+    "license": "Apache-2.0",
+    "os": [
+      "linux",
+      "macos",
+      "windows"
+    ],
+    "free_plan": "Sí: extensión gratuita y de código abierto. Coste del modelo: según proveedor; con Groq/Gemini free, $0.",
+    "is_free": true,
+    "paid_from": "Sin coste propio.",
+    "ai": true,
+    "requires_account": false,
+    "card_required": false,
+    "pros": [
+      "Código abierto",
+      "Agente real con aprobación por pasos",
+      "Funciona con proveedores gratuitos"
+    ],
+    "cons": [
+      "Solo dentro de VS Code",
+      "Consumo de tokens a cargo del proveedor"
+    ],
+    "alternatives": [
+      "opencode",
+      "aider",
+      "continue"
+    ],
+    "source": "https://cline.bot",
+    "last_verified": null,
+    "verified": false
+  },
+  {
+    "id": "aider",
+    "name": "Aider",
+    "category": "agentes-ia",
+    "desc": "Asistente de programación en terminal, de código abierto. Soporta múltiples proveedores (invertir en un endpoint gratuito = $0).",
+    "site": "https://aider.chat",
+    "open_source": true,
+    "license": "Apache-2.0",
+    "os": [
+      "linux",
+      "macos",
+      "windows"
+    ],
+    "free_plan": "Sí: gratuito y de código abierto.",
+    "is_free": true,
+    "paid_from": "Sin coste propio.",
+    "ai": true,
+    "requires_account": false,
+    "card_required": false,
+    "pros": [
+      "Gratuito y OSS",
+      "Terminal, encaja con VERDIX",
+      "Muy usado y documentado"
+    ],
+    "cons": [
+      "Requiere configurar proveedor de modelo",
+      "Más crudo que un IDE completo"
+    ],
+    "alternatives": [
+      "opencode",
+      "cline"
+    ],
+    "source": "https://aider.chat",
+    "last_verified": null,
+    "verified": false
+  },
+  {
+    "id": "lovable",
+    "name": "Lovable",
+    "category": "constructores",
+    "desc": "Generador de aplicaciones completas desde prompt (full-stack, deploy incluido). Freemium.",
+    "site": "https://lovable.dev",
+    "open_source": false,
+    "license": "Propietaria (SaaS)",
+    "os": [
+      "web"
+    ],
+    "free_plan": "Free: 5 build credits/día, máx 30/mes (documentación oficial). Pro: US$25/mes.",
+    "is_free": true,
+    "paid_from": "US$25/mes (Pro)",
+    "ai": true,
+    "requires_account": true,
+    "card_required": false,
+    "pros": [
+      "Muy rápido para prototipos full-stack",
+      "Plan Free funcional para probar"
+    ],
+    "cons": [
+      "Créditos gratis limitados",
+      "Propietario",
+      "Vendor lock-in moderado"
+    ],
+    "alternatives": [
+      "bolt",
+      "v0",
+      "replit"
+    ],
+    "source": "https://docs.lovable.dev/introduction/credits-and-usage",
+    "last_verified": "2026-11-19",
+    "verified": true
+  },
+  {
+    "id": "bolt",
+    "name": "Bolt.new",
+    "category": "constructores",
+    "desc": "Generador de apps con IA en el navegador (StackBlitz). Freemium: tier gratuito con 1 millón de tokens/mes (según comparativas independientes, Oct-2026).",
+    "site": "https://bolt.new",
+    "open_source": false,
+    "license": "Propietaria (SaaS)",
+    "os": [
+      "web"
+    ],
+    "free_plan": "Free: ~1M tokens/mes (fuente: comparación independiente, no doc oficial verificada línea a línea hoy).",
+    "is_free": true,
+    "paid_from": "~US$25/mes (Pro, publicado)",
+    "ai": true,
+    "requires_account": true,
+    "card_required": false,
+    "pros": [
+      "Free usable para prototipos",
+      "Full-stack desde el navegador"
+    ],
+    "cons": [
+      "Límites mensuales",
+      "Propietario"
+    ],
+    "alternatives": [
+      "lovable",
+      "v0",
+      "replit"
+    ],
+    "source": "https://genmb.com/blog/genmb-free-plan-vs-bolt-lovable-v0",
+    "last_verified": "2026-11-19",
+    "verified": true
+  },
+  {
+    "id": "v0",
+    "name": "v0 (Vercel)",
+    "category": "constructores",
+    "desc": "Generador de interfaces de Vercel (React/Next + shadcn/ui). Plan gratuito con cuota diaria; Premium de pago.",
+    "site": "https://v0.dev",
+    "open_source": false,
+    "license": "Propietaria (SaaS, Vercel)",
+    "os": [
+      "web"
+    ],
+    "free_plan": "Plan gratuito con cuota diaria/mensual (límites exactos variables; ver fuente oficial).",
+    "is_free": true,
+    "paid_from": "v0 Premium (precio publicado por Vercel; no verificado al detalle)",
+    "ai": true,
+    "requires_account": true,
+    "card_required": false,
+    "pros": [
+      "Salida React/Next + shadcn de calidad",
+      "Encaja en el flujo Vercel de VERDIX"
+    ],
+    "cons": [
+      "Cuota gratuita limitada",
+      "Centrado en frontend"
+    ],
+    "alternatives": [
+      "bolt",
+      "lovable",
+      "stitch"
+    ],
+    "source": "https://vercel.com/blog/introducing-v0-free-tier",
+    "last_verified": null,
+    "verified": false
+  },
+  {
+    "id": "replit",
+    "name": "Replit",
+    "category": "constructores",
+    "desc": "IDE en la nube + agente de IA. Starter gratuito; Core US$20/mes (US$18 con anual); Pro US$100/mes.",
+    "site": "https://replit.com/pricing",
+    "open_source": false,
+    "license": "Propietaria (SaaS)",
+    "os": [
+      "web",
+      "linux",
+      "macos",
+      "windows"
+    ],
+    "free_plan": "Starter: gratuito con límites (Free Mode: hasta ~30h chat, 60 proyectos según docs oficiales).",
+    "is_free": true,
+    "paid_from": "US$20/mes (Core)",
+    "ai": true,
+    "requires_account": true,
+    "card_required": false,
+    "pros": [
+      "Entorno completo en la nube gratis para empezar",
+      "Deploy integrado"
+    ],
+    "cons": [
+      "Starter limitado",
+      "Dependencia de la nube"
+    ],
+    "alternatives": [
+      "bolt",
+      "lovable",
+      "vscode"
+    ],
+    "source": "https://replit.com/pricing",
+    "last_verified": "2026-11-19",
+    "verified": true
+  },
+  {
+    "id": "stitch",
+    "name": "Google Stitch",
+    "category": "diseno",
+    "desc": "Generador de UIs con IA (texto/imagen → mockups de alta fidelidad y design systems), de Google Labs.",
+    "site": "https://stitch.withgoogle.com",
+    "open_source": false,
+    "license": "Propietaria (Google Labs)",
+    "os": [
+      "web"
+    ],
+    "free_plan": "Gratuito con cuenta de Google (Google Labs). Límites de generación según el modo; sin plan de pago claro publicado.",
+    "is_free": true,
+    "paid_from": "Sin plan de pago publicado a fecha de verificación.",
+    "ai": true,
+    "requires_account": true,
+    "card_required": false,
+    "pros": [
+      "Gratis",
+      "Mockups rápidos desde texto/imagen",
+      "Export a código/Figma"
+    ],
+    "cons": [
+      "Experimental (Google Labs)",
+      "Requiere cuenta Google",
+      "Límites de generación"
+    ],
+    "alternatives": [
+      "v0",
+      "penpot",
+      "figma"
+    ],
+    "source": "https://blog.google/innovation-and-ai/models-and-research/google-labs/stitch-ai-ui-design/",
+    "last_verified": "2026-11-19",
+    "verified": true
+  },
+  {
+    "id": "figma",
+    "name": "Figma",
+    "category": "diseno",
+    "desc": "Editor de diseño colaborativo (estándar de UI/UX). Freemium: plan Starter gratuito (límites de archivos/proyectos).",
+    "site": "https://www.figma.com",
+    "open_source": false,
+    "license": "Propietaria",
+    "os": [
+      "web",
+      "macos",
+      "windows"
+    ],
+    "free_plan": "Starter: gratuito con límites (archivos y proyectos). Profesional: desde ~US$12/mes/editor.",
+    "is_free": true,
+    "paid_from": "~US$12/mes/editor (publicado; no verificado al detalle)",
+    "ai": true,
+    "requires_account": true,
+    "card_required": false,
+    "pros": [
+      "Estándar de la industria",
+      "Colaboración en vivo",
+      "Ecosistema enorme de plugins"
+    ],
+    "cons": [
+      "Propietario",
+      "Límites del plan gratuito",
+      "Dependencia de la nube"
+    ],
+    "alternatives": [
+      "penpot",
+      "framer"
+    ],
+    "source": "https://www.figma.com/pricing/",
+    "last_verified": null,
+    "verified": false
+  },
+  {
+    "id": "penpot",
+    "name": "Penpot",
+    "category": "diseno",
+    "desc": "Herramienta de diseño y prototipado de código abierto (alternativa libre a Figma), self-hostable y en la nube.",
+    "site": "https://penpot.app",
+    "open_source": true,
+    "license": "MPL-2.0",
+    "os": [
+      "web",
+      "linux",
+      "macos",
+      "windows"
+    ],
+    "free_plan": "Sí: gratuita y de código abierto. Cloud oficial gratuita con límites generosos o self-hosting.",
+    "is_free": true,
+    "paid_from": "Sin coste para uso self-hosted; planes de soporte enterprise opcionales.",
+    "ai": false,
+    "requires_account": true,
+    "card_required": false,
+    "pros": [
+      "Código abierto",
+      "Self-hostable (tus datos en tu casa)",
+      "Sin límites de asientos en self-host"
+    ],
+    "cons": [
+      "Menos ecosistema que Figma",
+      "Algunas funciones Figma no existen"
+    ],
+    "alternatives": [
+      "figma",
+      "stitch"
+    ],
+    "source": "https://penpot.app",
+    "last_verified": null,
+    "verified": false
+  },
+  {
+    "id": "vscode",
+    "name": "Visual Studio Code",
+    "category": "editores",
+    "desc": "Editor de código de Microsoft, gratuito, con marketplace enorme. Binario propietario con núcleo abierto (Code OSS).",
+    "site": "https://code.visualstudio.com",
+    "open_source": false,
+    "license": "MIT (núcleo Code OSS) + binario propietario",
+    "os": [
+      "linux",
+      "macos",
+      "windows"
+    ],
+    "free_plan": "Sí: gratuito.",
+    "is_free": true,
+    "paid_from": "Sin coste.",
+    "ai": false,
+    "requires_account": false,
+    "card_required": false,
+    "pros": [
+      "Gratis",
+      "Ecosistema de extensiones gigante",
+      "Depuración integrada"
+    ],
+    "cons": [
+      "Binario propietario (telemetría opcional)",
+      "Pensado para escritorio pesado"
+    ],
+    "alternatives": [
+      "vscodium",
+      "neovim",
+      "zed"
+    ],
+    "source": "https://code.visualstudio.com",
+    "last_verified": null,
+    "verified": false
+  },
+  {
+    "id": "vscodium",
+    "name": "VSCodium",
+    "category": "editores",
+    "desc": "Builds binarios de Code OSS sin telemetría ni marca Microsoft. 100% gratuito y de código abierto.",
+    "site": "https://vscodium.com",
+    "open_source": true,
+    "license": "MIT",
+    "os": [
+      "linux",
+      "macos",
+      "windows"
+    ],
+    "free_plan": "Sí: gratuito y de código abierto.",
+    "is_free": true,
+    "paid_from": "Sin coste.",
+    "ai": false,
+    "requires_account": false,
+    "card_required": false,
+    "pros": [
+      "Sin telemetría",
+      "Misma base que VS Code",
+      "Código abierto"
+    ],
+    "cons": [
+      "Marketplace comunidad (open-vsx), no el oficial"
+    ],
+    "alternatives": [
+      "vscode",
+      "neovim"
+    ],
+    "source": "https://vscodium.com",
+    "last_verified": null,
+    "verified": false
+  },
+  {
+    "id": "neovim",
+    "name": "Neovim",
+    "category": "editores",
+    "desc": "Editor de texto hiper-extensible en terminal, de código abierto. Ideal para máquinas con 4 GB de RAM.",
+    "site": "https://neovim.io",
+    "open_source": true,
+    "license": "Apache-2.0",
+    "os": [
+      "linux",
+      "macos",
+      "windows",
+      "bsd"
+    ],
+    "free_plan": "Sí: gratuito y de código abierto.",
+    "is_free": true,
+    "paid_from": "Sin coste.",
+    "ai": false,
+    "requires_account": false,
+    "card_required": false,
+    "pros": [
+      "Ultraligero",
+      "Gratuito y OSS",
+      "Configurable en Lua"
+    ],
+    "cons": [
+      "Curva de aprendizaje alta"
+    ],
+    "alternatives": [
+      "zed",
+      "vscodium"
+    ],
+    "source": "https://neovim.io",
+    "last_verified": null,
+    "verified": false
+  },
+  {
+    "id": "zed",
+    "name": "Zed",
+    "category": "editores",
+    "desc": "Editor moderno escrito en Rust, muy rápido, con IA opcional y colaboración. Código abierto.",
+    "site": "https://zed.dev",
+    "open_source": true,
+    "license": "GPL-3.0 (editor) / Apache-2.0 (componentes) — ver repositorio",
+    "os": [
+      "linux",
+      "macos"
+    ],
+    "free_plan": "Sí: gratuito y de código abierto.",
+    "is_free": true,
+    "paid_from": "Sin coste. Planes de IA opcionales de pago.",
+    "ai": true,
+    "requires_account": false,
+    "card_required": false,
+    "pros": [
+      "Rendimiento excelente (Rust/GPU)",
+      "IA opcional sin bloqueo",
+      "OSS"
+    ],
+    "cons": [
+      "Sin Windows (a fecha de verificación)",
+      "Ecosistema de extensiones en crecimiento"
+    ],
+    "alternatives": [
+      "neovim",
+      "vscode"
+    ],
+    "source": "https://zed.dev",
+    "last_verified": null,
+    "verified": false
+  },
+  {
+    "id": "fastapi",
+    "name": "FastAPI",
+    "category": "backend",
+    "desc": "Framework web Python: rápido, tipado, OpenAPI automática. Base del backend de VERDIX.",
+    "site": "https://fastapi.tiangolo.com",
+    "open_source": true,
+    "license": "MIT",
+    "os": [
+      "linux",
+      "macos",
+      "windows"
+    ],
+    "free_plan": "Sí: gratuito y de código abierto.",
+    "is_free": true,
+    "paid_from": "Sin coste.",
+    "ai": false,
+    "requires_account": false,
+    "card_required": false,
+    "pros": [
+      "Tipado + docs OpenAPI automáticas",
+      "Altísimo rendimiento para Python",
+      "Versión usada por VERDIX: 0.163.1"
+    ],
+    "cons": [
+      "Requiere Python async cómodo"
+    ],
+    "alternatives": [
+      "flask",
+      "express"
+    ],
+    "source": "https://fastapi.tiangolo.com",
+    "last_verified": "2026-11-19",
+    "verified": true
+  },
+  {
+    "id": "flask",
+    "name": "Flask",
+    "category": "backend",
+    "desc": "Microframework web Python, minimalista y maduro. Gratuito y de código abierto.",
+    "site": "https://flask.palletsprojects.com",
+    "open_source": true,
+    "license": "BSD-3-Clause",
+    "os": [
+      "linux",
+      "macos",
+      "windows"
+    ],
+    "free_plan": "Sí: gratuito y de código abierto.",
+    "is_free": true,
+    "paid_from": "Sin coste.",
+    "ai": false,
+    "requires_account": false,
+    "card_required": false,
+    "pros": [
+      "Simple y probado",
+      "Ecosistema enorme"
+    ],
+    "cons": [
+      "Menos estructura que Django"
+    ],
+    "alternatives": [
+      "fastapi",
+      "express"
+    ],
+    "source": "https://flask.palletsprojects.com",
+    "last_verified": null,
+    "verified": false
+  },
+  {
+    "id": "express",
+    "name": "Express.js",
+    "category": "backend",
+    "desc": "Framework HTTP minimalista para Node.js. Estándar de APIs en JS. Gratuito y de código abierto.",
+    "site": "https://expressjs.com",
+    "open_source": true,
+    "license": "MIT",
+    "os": [
+      "linux",
+      "macos",
+      "windows"
+    ],
+    "free_plan": "Sí: gratuito y de código abierto.",
+    "is_free": true,
+    "paid_from": "Sin coste.",
+    "ai": false,
+    "requires_account": false,
+    "card_required": false,
+    "pros": [
+      "Ubico y veloz de arrancar",
+      "Miles de middlewares"
+    ],
+    "cons": [
+      "Sin estructura opinada: tú decides el orden"
+    ],
+    "alternatives": [
+      "fastapi",
+      "flask"
+    ],
+    "source": "https://expressjs.com",
+    "last_verified": null,
+    "verified": false
+  },
+  {
+    "id": "sqlite",
+    "name": "SQLite",
+    "category": "datos-cloud",
+    "desc": "Base de datos embebida sin servidor. Dominio público: gratuito sin ninguna condición. Base histórica y de benchmarks de VERDIX.",
+    "site": "https://sqlite.org",
+    "open_source": true,
+    "license": "Dominio público",
+    "os": [
+      "linux",
+      "macos",
+      "windows",
+      "android",
+      "ios"
+    ],
+    "free_plan": "Sí: dominio público, gratuito para todo uso.",
+    "is_free": true,
+    "paid_from": "Sin coste.",
+    "ai": false,
+    "requires_account": false,
+    "card_required": false,
+    "pros": [
+      "Cero configuración",
+      "Perfecto para local-first y benchmarks",
+      "Versionado (archivo único)"
+    ],
+    "cons": [
+      "No para escritura concurrente masiva"
+    ],
+    "alternatives": [
+      "postgresql",
+      "supabase"
+    ],
+    "source": "https://sqlite.org",
+    "last_verified": null,
+    "verified": false
+  },
+  {
+    "id": "supabase",
+    "name": "Supabase",
+    "category": "datos-cloud",
+    "desc": "Backend-as-a-Service open source (PostgreSQL + auth + storage + realtime). Free tier disponible.",
+    "site": "https://supabase.com",
+    "open_source": true,
+    "license": "Apache-2.0 (núcleo)",
+    "os": [
+      "web"
+    ],
+    "free_plan": "Free tier: proyectos pequeños gratis (p. ej. ~500 MB DB; límites publicados por Supabase).",
+    "is_free": true,
+    "paid_from": "US$25/mes (Pro, publicado; no verificado hoy)",
+    "ai": false,
+    "requires_account": true,
+    "card_required": false,
+    "pros": [
+      "Open source + free tier",
+      "PostgreSQL real con auth/storage incluido"
+    ],
+    "cons": [
+      "Free tier con pausas por inactividad",
+      "Vendor en la nube"
+    ],
+    "alternatives": [
+      "firebase",
+      "sqlite"
+    ],
+    "source": "https://supabase.com/pricing",
+    "last_verified": null,
+    "verified": false
+  },
+  {
+    "id": "firebase",
+    "name": "Firebase",
+    "category": "datos-cloud",
+    "desc": "BaaS de Google (Firestore, Auth, Hosting, Functions). Spark: plan gratuito con límites generosos.",
+    "site": "https://firebase.google.com",
+    "open_source": false,
+    "license": "Propietaria (Google)",
+    "os": [
+      "web",
+      "android",
+      "ios"
+    ],
+    "free_plan": "Spark: gratuito con cuotas (lecturas/escrituras, hosting). Blaze: pago por uso.",
+    "is_free": true,
+    "paid_from": "Blaze pague-como-use (sin mínimo; pero requiere tarjeta para activar)",
+    "ai": false,
+    "requires_account": true,
+    "card_required": false,
+    "pros": [
+      "Free tier serio para MVPs",
+      "Auth + DB real sin servidor",
+      "Usado por el juego Ben 10 en VERDIX"
+    ],
+    "cons": [
+      "Propietario (vendor lock-in alto)",
+      "Spark limita concurrencia"
+    ],
+    "alternatives": [
+      "supabase",
+      "sqlite"
+    ],
+    "source": "https://firebase.google.com/pricing",
+    "last_verified": null,
+    "verified": false
+  },
+  {
+    "id": "kivy",
+    "name": "Kivy",
+    "category": "movil",
+    "desc": "Framework Python para apps multiplataforma (Android/iOS/desktop) con una sola base de código. El MAHORAGA APK de VERDIX está construido con Kivy.",
+    "site": "https://kivy.org",
+    "open_source": true,
+    "license": "MIT",
+    "os": [
+      "linux",
+      "macos",
+      "windows",
+      "android",
+      "ios"
+    ],
+    "free_plan": "Sí: gratuito y de código abierto.",
+    "is_free": true,
+    "paid_from": "Sin coste.",
+    "ai": false,
+    "requires_account": false,
+    "card_required": false,
+    "pros": [
+      "Python → Android en un solo repo",
+      "Usado en producción por MAHORAGA"
+    ],
+    "cons": [
+      "UI no nativa en todas las plataformas",
+      "Empaquetado Android pesado"
+    ],
+    "alternatives": [
+      "capacitor",
+      "flutter",
+      "react-native"
+    ],
+    "source": "https://kivy.org",
+    "last_verified": null,
+    "verified": false
+  },
+  {
+    "id": "continue",
+    "name": "Continue",
+    "category": "agentes-ia",
+    "desc": "Extensión de código abierto para VS Code/JetBrains: copiloto enchufable a cualquier proveedor de modelos (OpenAI, Anthropic, Ollama, Groq…).",
+    "site": "https://www.continue.dev",
+    "open_source": true,
+    "license": "Apache-2.0",
+    "os": [
+      "linux",
+      "macos",
+      "windows"
+    ],
+    "free_plan": "Sí: gratuito y de código abierto. Coste del modelo según proveedor (con Ollama local o Groq free, $0).",
+    "is_free": true,
+    "paid_from": "Sin coste propio.",
+    "ai": true,
+    "requires_account": false,
+    "card_required": false,
+    "pros": [
+      "OSS y sin cuenta",
+      "Conecta modelos locales (Ollama)",
+      "VS Code y JetBrains"
+    ],
+    "cons": [
+      "Calidad atada al modelo elegido"
+    ],
+    "alternatives": [
+      "cline",
+      "opencode",
+      "aider"
+    ],
+    "source": "https://www.continue.dev",
+    "last_verified": null,
+    "verified": false
+  },
+  {
+    "id": "framer",
+    "name": "Framer",
+    "category": "diseno",
+    "desc": "Constructor web/diseño + publicación con IA. Freemium con plan Basic gratuito (sitio en subdominio framer.website).",
+    "site": "https://www.framer.com",
+    "open_source": false,
+    "license": "Propietaria",
+    "os": [
+      "web",
+      "macos",
+      "windows"
+    ],
+    "free_plan": "Basic: gratuito con límites (sitio en subdominio Framer, marca Framer). Planes de pago para dominio propio.",
+    "is_free": true,
+    "paid_from": "US$15/mes/sitio (publicado; no verificado al detalle)",
+    "ai": true,
+    "requires_account": true,
+    "card_required": false,
+    "pros": [
+      "Publica sin programar",
+      "Prototipado y diseño en una herramienta"
+    ],
+    "cons": [
+      "Propietario",
+      "Plan gratis con marca/subdominio"
+    ],
+    "alternatives": [
+      "figma",
+      "stitch",
+      "penpot"
+    ],
+    "source": "https://www.framer.com/pricing/",
+    "last_verified": null,
+    "verified": false
+  },
+  {
+    "id": "postgresql",
+    "name": "PostgreSQL",
+    "category": "datos-cloud",
+    "desc": "Base de datos relacional avanzada de código abierto. Estándar en servidores; más potente que SQLite para concurrencia.",
+    "site": "https://www.postgresql.org",
+    "open_source": true,
+    "license": "PostgreSQL License (similar BSD)",
+    "os": [
+      "linux",
+      "macos",
+      "windows",
+      "bsd"
+    ],
+    "free_plan": "Sí: gratuito y de código abierto.",
+    "is_free": true,
+    "paid_from": "Sin coste.",
+    "ai": false,
+    "requires_account": false,
+    "card_required": false,
+    "pros": [
+      "Robustez y concurrencia real",
+      "Extensiones (pgvector, PostGIS)"
+    ],
+    "cons": [
+      "Requiere servidor/configuración",
+      "Pesado para 4 GB RAM si se abusa"
+    ],
+    "alternatives": [
+      "sqlite",
+      "supabase"
+    ],
+    "source": "https://www.postgresql.org",
+    "last_verified": null,
+    "verified": false
+  },
+  {
+    "id": "flutter",
+    "name": "Flutter",
+    "category": "movil",
+    "desc": "Framework de Google (Dart) para apps multiplataforma desde un único código: Android, iOS, web y escritorio.",
+    "site": "https://flutter.dev",
+    "open_source": true,
+    "license": "BSD-3-Clause",
+    "os": [
+      "linux",
+      "macos",
+      "windows",
+      "android",
+      "ios"
+    ],
+    "free_plan": "Sí: gratuito y de código abierto.",
+    "is_free": true,
+    "paid_from": "Sin coste.",
+    "ai": false,
+    "requires_account": false,
+    "card_required": false,
+    "pros": [
+      "Un solo código para 6 plataformas",
+      "Rendimiento cercano a nativo"
+    ],
+    "cons": [
+      "Binarios grandes",
+      "Curva con Dart",
+      "Toolchain pesado para 4 GB RAM"
+    ],
+    "alternatives": [
+      "kivy",
+      "react-native",
+      "capacitor"
+    ],
+    "source": "https://flutter.dev",
+    "last_verified": null,
+    "verified": false
+  },
+  {
+    "id": "react-native",
+    "name": "React Native",
+    "category": "movil",
+    "desc": "Framework de Meta para apps móviles nativas con JavaScript/React. Gratuito y de código abierto.",
+    "site": "https://reactnative.dev",
+    "open_source": true,
+    "license": "MIT",
+    "os": [
+      "macos",
+      "windows",
+      "linux",
+      "android",
+      "ios"
+    ],
+    "free_plan": "Sí: gratuito y de código abierto.",
+    "is_free": true,
+    "paid_from": "Sin coste.",
+    "ai": false,
+    "requires_account": false,
+    "card_required": false,
+    "pros": [
+      "Reutiliza conocimiento React/JS",
+      "Ecosistema enorme"
+    ],
+    "cons": [
+      "iOS requiere macOS para compilar",
+      "Partes nativas requieren bridges"
+    ],
+    "alternatives": [
+      "flutter",
+      "kivy",
+      "capacitor"
+    ],
+    "source": "https://reactnative.dev",
+    "last_verified": null,
+    "verified": false
+  },
+  {
+    "id": "capacitor",
+    "name": "Capacitor",
+    "category": "movil",
+    "desc": "De Ionic: empaqueta tu web (JS/HTML/CSS) como app nativa Android/iOS con acceso a APIs del sistema.",
+    "site": "https://capacitorjs.com",
+    "open_source": true,
+    "license": "MIT",
+    "os": [
+      "linux",
+      "macos",
+      "windows",
+      "android",
+      "ios"
+    ],
+    "free_plan": "Sí: gratuito y de código abierto.",
+    "is_free": true,
+    "paid_from": "Sin coste (Ionic propone servicios enterprise opcionales de pago).",
+    "ai": false,
+    "requires_account": false,
+    "card_required": false,
+    "pros": [
+      "Web existente → app nativa",
+      "Acceso a cámara/GPS/notificaciones",
+      "Ideal para convertir tu web VERDIX en APK"
+    ],
+    "cons": [
+      "Rendimiento según motor web del dispositivo"
+    ],
+    "alternatives": [
+      "kivy",
+      "flutter",
+      "react-native"
+    ],
+    "source": "https://capacitorjs.com",
+    "last_verified": null,
+    "verified": false
+  }
+]

@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#070318">
+<title>VERDIX Dev Lab · Catálogo inteligente de herramientas para desarrolladores</title>
+<meta name="description" content="Fichas verificadas de herramientas de desarrollo: agentes de IA, constructores, editores, diseño y backend. Búsqueda, comparación y recomendador. Gratuito y open source primero.">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+  <div class="wrap head-row">
+    <div class="brand">
+      <div class="logo">DL</div>
+      <div>
+        <h1>VERDIX <span class="grad">DEV LAB</span></h1>
+        <p class="tag">Catálogo inteligente · verificado con fecha · $0 primero</p>
+      </div>
+    </div>
+    <nav class="head-actions">
+      <button id="openWizard" class="primary-btn">🧭 Recomendador</button>
+      <a href="../index.html" class="ghost">← VERDIX</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <section class="searchbar">
+    <input id="q" type="text" placeholder="🔍 Buscar herramienta, función, categoría… (ej.: 'agente', 'APK', 'open source')" autocomplete="off">
+    <div class="toggles">
+      <label><input type="checkbox" id="onlyFree" checked> Solo gratis</label>
+      <label><input type="checkbox" id="onlyOSS"> Código abierto</label>
+      <label><input type="checkbox" id="onlyAI"> Con IA</label>
+    </div>
+  </section>
+
+  <div class="chips" id="catChips"></div>
+
+  <section class="grid-wrap">
+    <div id="resultCount" class="result-count"></div>
+    <div id="cardGrid" class="card-grid"></div>
+    <div id="emptyState" class="empty hidden">Nada coincide. Prueba con otros filtros — nada se esconde.</div>
+  </section>
+
+</main>
+
+<!-- Barra de comparación -->
+<div id="compareBar" class="compare-bar hidden">
+  <div class="wrap compare-inner">
+    <span id="compareCount"></span>
+    <div>
+      <button id="doCompare" class="primary-btn">⚖️ Comparar</button>
+      <button id="clearCompare" class="ghost">Vaciar</button>
+    </div>
+  </div>
+</div>
+
+<!-- Modal: ficha completa -->
+<div id="modal" class="modal hidden" role="dialog" aria-modal="true">
+  <div class="modal-box">
+    <button id="modalClose" class="modal-close" aria-label="Cerrar">✕</button>
+    <div id="modalContent"></div>
+  </div>
+</div>
+
+<!-- Modal: comparación -->
+<div id="compareModal" class="modal hidden" role="dialog" aria-modal="true">
+  <div class="modal-box wide">
+    <button id="compareClose" class="modal-close" aria-label="Cerrar">✕</button>
+    <h2 class="modal-title">⚖️ Comparación lado a lado</h2>
+    <div class="compare-scroll"><table id="compareTable"></table></div>
+  </div>
+</div>
+
+<!-- Modal: recomendador -->
+<div id="wizardModal" class="modal hidden" role="dialog" aria-modal="true">
+  <div class="modal-box">
+    <button id="wizardClose" class="modal-close" aria-label="Cerrar">✕</button>
+    <h2 class="modal-title">🧭 Recomendador VERDIX</h2>
+    <p class="note">3 preguntas. Prioriza opciones gratis. Sin venderte nada.</p>
+    <form id="wizardForm">
+      <fieldset>
+        <legend>1) ¿Qué vas a construir?</legend>
+        <label><input type="radio" name="goal" value="web"> Web / frontend</label>
+        <label><input type="radio" name="goal" value="movil"> App móvil / APK</label>
+        <label><input type="radio" name="goal" value="backend"> API / backend</label>
+        <label><input type="radio" name="goal" value="agente"> Agente / automatización con IA</label>
+        <label><input type="radio" name="goal" value="diseño"> Diseño / UI / prototipos</label>
+        <label><input type="radio" name="goal" value="editor"> Terminal / editor rápido</label>
+      </fieldset>
+      <fieldset>
+        <legend>2) Presupuesto</legend>
+        <label><input type="radio" name="budget" value="zero" checked> $0 estricto (sin tarjeta)</label>
+        <label><input type="radio" name="budget" value="free"> Freemium vale (siempre hay tier gratis)</label>
+        <label><input type="radio" name="budget" value="paid"> Puedo pagar algo</label>
+      </fieldset>
+      <fieldset>
+        <legend>3) Tu máquina</legend>
+        <label><input type="radio" name="hw" value="low" checked> Justa (≤4 GB RAM, HDD)</label>
+        <label><input type="radio" name="hw" value="normal"> Normal (8-16 GB)</label>
+        <label><input type="radio" name="hw" value="high"> Potente</label>
+      </fieldset>
+      <button type="submit" class="primary-btn big">Ver recomendaciones →</button>
+    </form>
+    <div id="wizardResult" class="hidden"></div>
+  </div>
+</div>
+
+<footer>
+  <div class="wrap foot-row">
+    <span>VERDIX Dev Lab · fichas con fuente y fecha · gratis-first · código abierto-first</span>
+    <span id="statsLine"></span>
+  </div>
+</footer>
+
+<script src="devlab.js"></script>
+</body>
+</html>

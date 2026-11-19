@@ -1,0 +1,52 @@
+/* VERDIX BENCHMARK — identidad visual VERDIX: oscuro, azul/violeta, legible */
+:root{
+  --bg:#05081c; --panel:#0d1130; --panel-2:#131840;
+  --line:rgba(148,163,255,.14);
+  --text:#e2e8ff; --muted:#98a4d8;
+  --accent:#38bdf8; --accent-2:#a78bfa; --gold:#fbbf24; --good:#34d399;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:radial-gradient(1200px 700px at 70% -10%,rgba(167,139,250,.14),transparent 60%),radial-gradient(900px 600px at -10% 30%,rgba(56,189,248,.10),transparent 60%),var(--bg);
+  color:var(--text);font-family:'Space Grotesk','Segoe UI',system-ui,sans-serif;min-height:100vh}
+.wrap{max-width:1080px;margin:0 auto;padding:0 18px}
+header{position:sticky;top:0;z-index:20;background:rgba(5,8,28,.78);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.head-row{display:flex;align-items:center;justify-content:space-between;height:64px}
+.brand{display:flex;align-items:center;gap:12px}
+.logo{width:38px;height:38px;border-radius:11px;background:linear-gradient(135deg,var(--accent),var(--accent-2));display:flex;align-items:center;justify-content:center;font-weight:900;color:#05081c;font-size:.95rem;box-shadow:0 0 22px rgba(56,189,248,.35)}
+h1{font-size:1.25rem;letter-spacing:.02em}
+.grad{background:linear-gradient(120deg,var(--accent),var(--accent-2));-webkit-background-clip:text;background-clip:text;color:transparent}
+.tag{color:var(--muted);font-size:.7rem}
+nav a.ghost{color:var(--muted);text-decoration:none;font-size:.85rem;border:1px solid var(--line);padding:8px 14px;border-radius:10px;transition:.2s}
+nav a.ghost:hover{color:var(--accent);border-color:var(--accent)}
+main{padding:22px 0 40px;display:flex;flex-direction:column;gap:18px}
+.kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+.kpi{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:14px;display:flex;flex-direction:column;align-items:flex-start;gap:2px}
+.kpi-icon{font-size:1.1rem}
+.kpi-num{font-size:1.5rem;font-weight:800;background:linear-gradient(120deg,#fff,#bcd);-webkit-background-clip:text;background-clip:text;color:transparent}
+.kpi-label{color:var(--muted);font-size:.68rem}
+.panel{background:var(--panel);border:1px solid var(--line);border-radius:18px;padding:18px;box-shadow:0 14px 44px -22px rgba(0,0,0,.8)}
+.panel h2{font-size:1rem;margin-bottom:12px}
+.panel-head{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:10px}
+.panel-head h2{margin-bottom:0}
+.chart-box{position:relative;height:320px}
+.chart-box.small{height:260px}
+.switch{color:var(--muted);font-size:.8rem;display:flex;align-items:center;gap:6px;cursor:pointer}
+.table-scroll{overflow-x:auto}
+table{width:100%;border-collapse:collapse;font-size:.82rem;min-width:640px}
+th{text-align:left;color:var(--muted);font-size:.68rem;letter-spacing:.08em;text-transform:uppercase;padding:8px 10px;border-bottom:1px solid var(--line)}
+td{padding:8px 10px;border-bottom:1px solid rgba(148,163,255,.07)}
+tr.winner td{background:rgba(52,211,153,.09);color:#c8ffe4}
+.dot{display:inline-block;width:9px;height:9px;border-radius:50%;margin-right:6px}
+.verdict .note{color:var(--muted);font-size:.78rem;margin-bottom:10px}
+#verdictList{list-style:none;display:flex;flex-direction:column;gap:8px}
+#verdictList li{background:var(--panel-2);border:1px solid var(--line);border-left:3px solid var(--accent);border-radius:10px;padding:10px 12px;font-size:.86rem;line-height:1.5}
+.winline{margin-top:12px;padding:12px 14px;border-radius:12px;background:linear-gradient(120deg,rgba(251,191,36,.14),rgba(167,139,250,.14));border:1px solid rgba(251,191,36,.35);font-size:.9rem}
+.method ul{list-style:none;display:flex;flex-direction:column;gap:8px;color:var(--muted);font-size:.82rem;line-height:1.55}
+.method b{color:var(--text)}
+code,pre{font-family:ui-monospace,Menlo,monospace;background:var(--panel-2);border:1px solid var(--line);border-radius:6px;padding:1px 6px;font-size:.8em}
+pre{padding:12px;overflow-x:auto;margin-top:8px}
+details{margin-top:10px;color:var(--muted);font-size:.85rem}
+footer{border-top:1px solid var(--line);background:rgba(5,8,28,.6)}
+.foot-row{display:flex;justify-content:space-between;gap:12px;padding:14px 18px;color:var(--muted);font-size:.72rem;flex-wrap:wrap}
+@media(max-width:760px){.kpis{grid-template-columns:repeat(2,1fr)}.chart-box{height:240px}.head-row{height:auto;padding:12px 0;flex-wrap:wrap;gap:10px}}
