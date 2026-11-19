@@ -1,17 +1,16 @@
 {
-  "version": "0.5.0",
+  "version": "0.6.0",
   "released": "2026-11-19",
-  "apkUrl": "https://verdix-ecosystem.vercel.app/apk/verdix-0.5.0-arm64-v8a.apk",
+  "apkUrl": "https://verdix-ecosystem.vercel.app/apk/verdix-0.6.0-arm64-v8a.apk",
   "changelog": [
-    "VERDIX: la app ahora se llama VERDIX con logo infinito verde neón",
-    "Cerebro gratis 24/7 vía proxy Vercel (sin PC encendida)",
-    "Documentos: crea, lee, modifica, borra, comparte y descarga a Download/MAHORAGA",
-    "Imágenes: genera gratis (Pollinations) y DESCARGA a Pictures/MAHORAGA",
-    "Chatea con tus fotos: escribe «imagenes» y «muestra la ultima foto»",
-    "Contexto: «descarga la imagen», «descarga el documento», «lee el documento»",
-    "Vista previa de documentos con botones LEER / COMPARTIR / DESCARGAR",
-    "Input legible de nuevo (texto visible al escribir)",
-    "100% gratis, sin anuncios, sin registro, sin tarjeta"
+    "CLIP: adjunta archivos, imágenes y videos desde el teléfono (selector nativo)",
+    "Habilidades nuevas: agrega habilidad <qué quieres> — se prueba en sandbox y solo se inyecta si pasa",
+    "Modo offline ampliado: fecha, dados, moneda, contraseña, cálculo, conversiones, IMC, propina, interés, base64, morse y más",
+    "Generación de imágenes sin clave (Pollinations Turbo); Nano Banana/Gemini requiere cuota de pago",
+    "Toda respuesta se revisa y valida antes de mostrarse (APK y terminal)",
+    "Terminal con 7 agentes distintos y juez que elige la mejor respuesta",
+    "Juego Ben 10: logo VERDIX ∞, escudo y curación, amigos, perfil y controles personalizables",
+    "Dev Lab ampliado a 60 herramientas; Benchmark con 6 categorías nuevas medidas de verdad"
   ],
   "min_app": "0.1.0",
   "package": "org.nox.mahoraga"

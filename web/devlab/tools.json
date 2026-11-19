@@ -1082,5 +1082,1053 @@
     "source": "https://capacitorjs.com",
     "last_verified": null,
     "verified": false
+  },
+  {
+    "id": "vite",
+    "name": "Vite",
+    "category": "web",
+    "desc": "Empaquetador frontend rapidísimo con recarga instantánea; base de muchos projetos modernos.",
+    "site": "https://vite.dev",
+    "open_source": true,
+    "license": "MIT",
+    "os": [
+      "linux",
+      "macos",
+      "windows"
+    ],
+    "free_plan": "Sí: código abierto y sin coste propio según la fuente. Verificar antes de depender de él.",
+    "is_free": true,
+    "paid_from": "Sin coste propio.",
+    "ai": false,
+    "requires_account": false,
+    "card_required": false,
+    "pros": [
+      "Arranque muy rápido",
+      "Configuración simple",
+      "Gratis y OSS"
+    ],
+    "cons": [
+      "Requiere Node.js",
+      "Ecosistema extenso"
+    ],
+    "alternatives": [
+      "opencode",
+      "vscode"
+    ],
+    "source": "https://vite.dev",
+    "last_verified": "2026-11-19",
+    "verified": false
+  },
+  {
+    "id": "nextjs",
+    "name": "Next.js",
+    "category": "web",
+    "desc": "Framework React con renderizado por servidor, rutas y optimizaciones incluidas.",
+    "site": "https://nextjs.org",
+    "open_source": true,
+    "license": "MIT",
+    "os": [
+      "linux",
+      "macos",
+      "windows"
+    ],
+    "free_plan": "Sí: código abierto y sin coste propio según la fuente. Verificar antes de depender de él.",
+    "is_free": true,
+    "paid_from": "Sin coste propio.",
+    "ai": false,
+    "requires_account": false,
+    "card_required": false,
+    "pros": [
+      "Todo en uno para web",
+      "Muy usado",
+      "Plan gratis del framework"
+    ],
+    "cons": [
+      "Curva de aprendizaje",
+      "Vercel gratis tiene límites"
+    ],
+    "alternatives": [
+      "opencode",
+      "vscode"
+    ],
+    "source": "https://nextjs.org",
+    "last_verified": "2026-11-19",
+    "verified": false
+  },
+  {
+    "id": "astro",
+    "name": "Astro",
+    "category": "web",
+    "desc": "Generador de sitios estáticos que envía casi cero JavaScript al navegador.",
+    "site": "https://astro.build",
+    "open_source": true,
+    "license": "MIT",
+    "os": [
+      "linux",
+      "macos",
+      "windows"
+    ],
+    "free_plan": "Sí: código abierto y sin coste propio según la fuente. Verificar antes de depender de él.",
+    "is_free": true,
+    "paid_from": "Sin coste propio.",
+    "ai": false,
+    "requires_account": false,
+    "card_required": false,
+    "pros": [
+      "Sitios muy ligeros",
+      "Fácil con Markdown",
+      "Gratis y OSS"
+    ],
+    "cons": [
+      "Menos indicado para apps muy dinámicas"
+    ],
+    "alternatives": [
+      "opencode",
+      "vscode"
+    ],
+    "source": "https://astro.build",
+    "last_verified": "2026-11-19",
+    "verified": false
+  },
+  {
+    "id": "svelte",
+    "name": "Svelte",
+    "category": "web",
+    "desc": "Framework UI que compila a JavaScript mínimo sin runtime pesado.",
+    "site": "https://svelte.dev",
+    "open_source": true,
+    "license": "MIT",
+    "os": [
+      "linux",
+      "macos",
+      "windows"
+    ],
+    "free_plan": "Sí: código abierto y sin coste propio según la fuente. Verificar antes de depender de él.",
+    "is_free": true,
+    "paid_from": "Sin coste propio.",
+    "ai": false,
+    "requires_account": false,
+    "card_required": false,
+    "pros": [
+      "Código conciso",
+      "Muy rápido",
+      "Gratis y OSS"
+    ],
+    "cons": [
+      "Comunidad más pequeña que React"
+    ],
+    "alternatives": [
+      "opencode",
+      "vscode"
+    ],
+    "source": "https://svelte.dev",
+    "last_verified": "2026-11-19",
+    "verified": false
+  },
+  {
+    "id": "tailwind",
+    "name": "Tailwind CSS",
+    "category": "web",
+    "desc": "Framework de utilidades CSS para construir interfaces rápido y consistente.",
+    "site": "https://tailwindcss.com",
+    "open_source": true,
+    "license": "MIT",
+    "os": [
+      "linux",
+      "macos",
+      "windows"
+    ],
+    "free_plan": "Sí: código abierto y sin coste propio según la fuente. Verificar antes de depender de él.",
+    "is_free": true,
+    "paid_from": "Sin coste propio.",
+    "ai": false,
+    "requires_account": false,
+    "card_required": false,
+    "pros": [
+      "Estilos consistentes",
+      "Muy productivo",
+      "Gratis y OSS"
+    ],
+    "cons": [
+      "HTML más verboso",
+      "Requiere configuración inicial"
+    ],
+    "alternatives": [
+      "opencode",
+      "vscode"
+    ],
+    "source": "https://tailwindcss.com",
+    "last_verified": "2026-11-19",
+    "verified": false
+  },
+  {
+    "id": "htmx",
+    "name": "htmx",
+    "category": "web",
+    "desc": "Biblioteca que permite interactividad AJAX con atributos HTML, sin escribir mucho JS.",
+    "site": "https://htmx.org",
+    "open_source": true,
+    "license": "MIT",
+    "os": [
+      "linux",
+      "macos",
+      "windows"
+    ],
+    "free_plan": "Sí: código abierto y sin coste propio según la fuente. Verificar antes de depender de él.",
+    "is_free": true,
+    "paid_from": "Sin coste propio.",
+    "ai": false,
+    "requires_account": false,
+    "card_required": false,
+    "pros": [
+      "Muy pocas líneas de JS",
+      "Ideal para backend HTML",
+      "Gratis y OSS"
+    ],
+    "cons": [
+      "No sustituye a un framework completo"
+    ],
+    "alternatives": [
+      "opencode",
+      "vscode"
+    ],
+    "source": "https://htmx.org",
+    "last_verified": "2026-11-19",
+    "verified": false
+  },
+  {
+    "id": "nginx",
+    "name": "nginx",
+    "category": "web",
+    "desc": "Servidor web y proxy inverso ligero y muy usado en producción.",
+    "site": "https://nginx.org",
+    "open_source": true,
+    "license": "BSD-2",
+    "os": [
+      "linux",
+      "macos",
+      "windows"
+    ],
+    "free_plan": "Sí: código abierto y sin coste propio según la fuente. Verificar antes de depender de él.",
+    "is_free": true,
+    "paid_from": "Sin coste propio.",
+    "ai": false,
+    "requires_account": false,
+    "card_required": false,
+    "pros": [
+      "Bajo consumo",
+      "Muy estable",
+      "Gratis y OSS"
+    ],
+    "cons": [
+      "Configuración menos intuitiva"
+    ],
+    "alternatives": [
+      "opencode",
+      "vscode"
+    ],
+    "source": "https://nginx.org",
+    "last_verified": "2026-11-19",
+    "verified": false
+  },
+  {
+    "id": "nodejs",
+    "name": "Node.js",
+    "category": "backend",
+    "desc": "Entorno JavaScript del lado del servidor; base de gran parte del ecosistema web.",
+    "site": "https://nodejs.org",
+    "open_source": true,
+    "license": "MIT",
+    "os": [
+      "linux",
+      "macos",
+      "windows"
+    ],
+    "free_plan": "Sí: código abierto y sin coste propio según la fuente. Verificar antes de depender de él.",
+    "is_free": true,
+    "paid_from": "Sin coste propio.",
+    "ai": false,
+    "requires_account": false,
+    "card_required": false,
+    "pros": [
+      "Gran ecosistema",
+      "Muy rápido de iniciar",
+      "Gratis y OSS"
+    ],
+    "cons": [
+      "Consumo de memoria en proyectos grandes"
+    ],
+    "alternatives": [
+      "fastapi",
+      "flask"
+    ],
+    "source": "https://nodejs.org",
+    "last_verified": "2026-11-19",
+    "verified": false
+  },
+  {
+    "id": "django",
+    "name": "Django",
+    "category": "backend",
+    "desc": "Framework Python completo con ORM, admin y seguridad incluidas.",
+    "site": "https://www.djangoproject.com",
+    "open_source": true,
+    "license": "BSD-3",
+    "os": [
+      "linux",
+      "macos",
+      "windows"
+    ],
+    "free_plan": "Sí: código abierto y sin coste propio según la fuente. Verificar antes de depender de él.",
+    "is_free": true,
+    "paid_from": "Sin coste propio.",
+    "ai": false,
+    "requires_account": false,
+    "card_required": false,
+    "pros": [
+      "Baterías incluidas",
+      "panel de administración automático",
+      "Gratis y OSS"
+    ],
+    "cons": [
+      "Más pesado que microframeworks"
+    ],
+    "alternatives": [
+      "fastapi",
+      "flask"
+    ],
+    "source": "https://www.djangoproject.com",
+    "last_verified": "2026-11-19",
+    "verified": false
+  },
+  {
+    "id": "fastify",
+    "name": "Fastify",
+    "category": "backend",
+    "desc": "Framework Node.js enfocado en velocidad y validación de esquemas.",
+    "site": "https://fastify.dev",
+    "open_source": true,
+    "license": "MIT",
+    "os": [
+      "linux",
+      "macos",
+      "windows"
+    ],
+    "free_plan": "Sí: código abierto y sin coste propio según la fuente. Verificar antes de depender de él.",
+    "is_free": true,
+    "paid_from": "Sin coste propio.",
+    "ai": false,
+    "requires_account": false,
+    "card_required": false,
+    "pros": [
+      "Muy rápido",
+      "Plugins bien definidos",
+      "Gratis y OSS"
+    ],
+    "cons": [
+      "Menos popular que Express"
+    ],
+    "alternatives": [
+      "fastapi",
+      "flask"
+    ],
+    "source": "https://fastify.dev",
+    "last_verified": "2026-11-19",
+    "verified": false
+  },
+  {
+    "id": "mariadb",
+    "name": "MariaDB",
+    "category": "datos-cloud",
+    "desc": "Base de datos relacional abierta, compatible con MySQL.",
+    "site": "https://mariadb.org",
+    "open_source": true,
+    "license": "GPL",
+    "os": [
+      "linux",
+      "macos",
+      "windows"
+    ],
+    "free_plan": "Sí: código abierto y sin coste propio según la fuente. Verificar antes de depender de él.",
+    "is_free": true,
+    "paid_from": "Sin coste propio.",
+    "ai": false,
+    "requires_account": false,
+    "card_required": false,
+    "pros": [
+      "Gratis y OSS",
+      "Muy estable",
+      "Gran compatibilidad"
+    ],
+    "cons": [
+      "Requiere administración"
+    ],
+    "alternatives": [
+      "sqlite",
+      "supabase"
+    ],
+    "source": "https://mariadb.org",
+    "last_verified": "2026-11-19",
+    "verified": false
+  },
+  {
+    "id": "redis",
+    "name": "Redis",
+    "category": "datos-cloud",
+    "desc": "Almacén en memoria para caché, colas y sesiones de baja latencia.",
+    "site": "https://redis.io",
+    "open_source": true,
+    "license": "BSD-3",
+    "os": [
+      "linux",
+      "macos",
+      "windows"
+    ],
+    "free_plan": "Sí: código abierto y sin coste propio según la fuente. Verificar antes de depender de él.",
+    "is_free": true,
+    "paid_from": "Sin coste propio.",
+    "ai": false,
+    "requires_account": false,
+    "card_required": false,
+    "pros": [
+      "Muy rápido",
+      "Múltiples usos",
+      "Gratis y OSS"
+    ],
+    "cons": [
+      "En memoria: consume RAM"
+    ],
+    "alternatives": [
+      "sqlite",
+      "supabase"
+    ],
+    "source": "https://redis.io",
+    "last_verified": "2026-11-19",
+    "verified": false
+  },
+  {
+    "id": "mongodb",
+    "name": "MongoDB",
+    "category": "datos-cloud",
+    "desc": "Base de datos de documentos;社区 edition gratuita con licencia SSPL.",
+    "site": "https://www.mongodb.com",
+    "open_source": false,
+    "license": "SSPL",
+    "os": [
+      "linux",
+      "macos",
+      "windows"
+    ],
+    "free_plan": "Plan gratuito/comunidad descrito en la fuente; verificar límites antes de usarlo.",
+    "is_free": false,
+    "paid_from": "Consultar la fuente.",
+    "ai": false,
+    "requires_account": false,
+    "card_required": false,
+    "pros": [
+      "Flexible para datos cambiantes",
+      "Muy usado",
+      "Edición comunitaria gratis"
+    ],
+    "cons": [
+      "Licencia SSPL no OSI",
+      "Cambios de licencia recientes"
+    ],
+    "alternatives": [
+      "sqlite",
+      "supabase"
+    ],
+    "source": "https://www.mongodb.com",
+    "last_verified": "2026-11-19",
+    "verified": false
+  },
+  {
+    "id": "duckdb",
+    "name": "DuckDB",
+    "category": "datos-cloud",
+    "desc": "Base de datos analítica embebida: SQL sobre archivos locales sin servidor.",
+    "site": "https://duckdb.org",
+    "open_source": true,
+    "license": "MIT",
+    "os": [
+      "linux",
+      "macos",
+      "windows"
+    ],
+    "free_plan": "Sí: código abierto y sin coste propio según la fuente. Verificar antes de depender de él.",
+    "is_free": true,
+    "paid_from": "Sin coste propio.",
+    "ai": false,
+    "requires_account": false,
+    "card_required": false,
+    "pros": [
+      "Sin servidor",
+      "Muy rápido para análisis",
+      "Gratis y OSS"
+    ],
+    "cons": [
+      "No pensada para escritura concurrente"
+    ],
+    "alternatives": [
+      "sqlite",
+      "supabase"
+    ],
+    "source": "https://duckdb.org",
+    "last_verified": "2026-11-19",
+    "verified": false
+  },
+  {
+    "id": "minio",
+    "name": "MinIO",
+    "category": "datos-cloud",
+    "desc": "Almacenamiento de objetos compatible con S3, ejecutable en tu propia máquina.",
+    "site": "https://min.io",
+    "open_source": true,
+    "license": "AGPL",
+    "os": [
+      "linux",
+      "macos",
+      "windows"
+    ],
+    "free_plan": "Sí: código abierto y sin coste propio según la fuente. Verificar antes de depender de él.",
+    "is_free": true,
+    "paid_from": "Sin coste propio.",
+    "ai": false,
+    "requires_account": false,
+    "card_required": false,
+    "pros": [
+      "Compatible S3",
+      "Gratis y OSS",
+      "Ideal para backups"
+    ],
+    "cons": [
+      "La licencia AGPL exige cuidado en producto cerrado"
+    ],
+    "alternatives": [
+      "sqlite",
+      "supabase"
+    ],
+    "source": "https://min.io",
+    "last_verified": "2026-11-19",
+    "verified": false
+  },
+  {
+    "id": "gitea",
+    "name": "Gitea",
+    "category": "datos-cloud",
+    "desc": "Servidor Git ligero y autohospedado con issues y pull requests.",
+    "site": "https://gitea.com",
+    "open_source": true,
+    "license": "MIT",
+    "os": [
+      "linux",
+      "macos",
+      "windows"
+    ],
+    "free_plan": "Sí: código abierto y sin coste propio según la fuente. Verificar antes de depender de él.",
+    "is_free": true,
+    "paid_from": "Sin coste propio.",
+    "ai": false,
+    "requires_account": false,
+    "card_required": false,
+    "pros": [
+      "Muy ligero",
+      "Tus datos en casa",
+      "Gratis y OSS"
+    ],
+    "cons": [
+      "Requiere mantenimiento del servidor"
+    ],
+    "alternatives": [
+      "sqlite",
+      "supabase"
+    ],
+    "source": "https://gitea.com",
+    "last_verified": "2026-11-19",
+    "verified": false
+  },
+  {
+    "id": "pocketbase",
+    "name": "PocketBase",
+    "category": "datos-cloud",
+    "desc": "Backend en un solo binario: SQLite, autenticación, archivos y API en tiempo real.",
+    "site": "https://pocketbase.io",
+    "open_source": true,
+    "license": "MIT",
+    "os": [
+      "linux",
+      "macos",
+      "windows"
+    ],
+    "free_plan": "Sí: código abierto y sin coste propio según la fuente. Verificar antes de depender de él.",
+    "is_free": true,
+    "paid_from": "Sin coste propio.",
+    "ai": false,
+    "requires_account": false,
+    "card_required": false,
+    "pros": [
+      "Un solo archivo",
+      "Muy fácil de desplegar",
+      "Gratis y OSS"
+    ],
+    "cons": [
+      "Menos escalable que un cluster"
+    ],
+    "alternatives": [
+      "sqlite",
+      "supabase"
+    ],
+    "source": "https://pocketbase.io",
+    "last_verified": "2026-11-19",
+    "verified": false
+  },
+  {
+    "id": "wireguard",
+    "name": "WireGuard",
+    "category": "seguridad",
+    "desc": "VPN moderna, rápida y con configuración muy simple.",
+    "site": "https://www.wireguard.com",
+    "open_source": true,
+    "license": "GPL-2",
+    "os": [
+      "linux",
+      "macos",
+      "windows"
+    ],
+    "free_plan": "Sí: código abierto y sin coste propio según la fuente. Verificar antes de depender de él.",
+    "is_free": true,
+    "paid_from": "Sin coste propio.",
+    "ai": false,
+    "requires_account": false,
+    "card_required": false,
+    "pros": [
+      "Rápida y segura",
+      "Poco código auditable",
+      "Gratis y OSS"
+    ],
+    "cons": [
+      "Requiere configuración de claves"
+    ],
+    "alternatives": [
+      "opencode",
+      "vscode"
+    ],
+    "source": "https://www.wireguard.com",
+    "last_verified": "2026-11-19",
+    "verified": false
+  },
+  {
+    "id": "gpg",
+    "name": "GnuPG",
+    "category": "seguridad",
+    "desc": "Cifrado y firmas digitales estándar para archivos y correo.",
+    "site": "https://gnupg.org",
+    "open_source": true,
+    "license": "GPL-3",
+    "os": [
+      "linux",
+      "macos",
+      "windows"
+    ],
+    "free_plan": "Sí: código abierto y sin coste propio según la fuente. Verificar antes de depender de él.",
+    "is_free": true,
+    "paid_from": "Sin coste propio.",
+    "ai": false,
+    "requires_account": false,
+    "card_required": false,
+    "pros": [
+      "Estándar reconocido",
+      "Gratis y OSS"
+    ],
+    "cons": [
+      "Curva de aprendizaje"
+    ],
+    "alternatives": [
+      "opencode",
+      "vscode"
+    ],
+    "source": "https://gnupg.org",
+    "last_verified": "2026-11-19",
+    "verified": false
+  },
+  {
+    "id": "clamav",
+    "name": "ClamAV",
+    "category": "seguridad",
+    "desc": "Antivirus de código abierto para servidores y archivos.",
+    "site": "https://www.clamav.net",
+    "open_source": true,
+    "license": "GPL-2",
+    "os": [
+      "linux",
+      "macos",
+      "windows"
+    ],
+    "free_plan": "Sí: código abierto y sin coste propio según la fuente. Verificar antes de depender de él.",
+    "is_free": true,
+    "paid_from": "Sin coste propio.",
+    "ai": false,
+    "requires_account": false,
+    "card_required": false,
+    "pros": [
+      "Gratis y OSS",
+      "Firmas actualizables"
+    ],
+    "cons": [
+      "Consume recursos al escanear"
+    ],
+    "alternatives": [
+      "opencode",
+      "vscode"
+    ],
+    "source": "https://www.clamav.net",
+    "last_verified": "2026-11-19",
+    "verified": false
+  },
+  {
+    "id": "fail2ban",
+    "name": "Fail2Ban",
+    "category": "seguridad",
+    "desc": "Bloquea IPs tras repetidos intentos de acceso fallidos en servicios SSH/web.",
+    "site": "https://www.fail2ban.org",
+    "open_source": true,
+    "license": "GPL-2",
+    "os": [
+      "linux",
+      "macos",
+      "windows"
+    ],
+    "free_plan": "Sí: código abierto y sin coste propio según la fuente. Verificar antes de depender de él.",
+    "is_free": true,
+    "paid_from": "Sin coste propio.",
+    "ai": false,
+    "requires_account": false,
+    "card_required": false,
+    "pros": [
+      "Muy eficaz",
+      "Fácil de configurar",
+      "Gratis y OSS"
+    ],
+    "cons": [
+      "Puede bloquear IPs legítimas"
+    ],
+    "alternatives": [
+      "opencode",
+      "vscode"
+    ],
+    "source": "https://www.fail2ban.org",
+    "last_verified": "2026-11-19",
+    "verified": false
+  },
+  {
+    "id": "letsencrypt",
+    "name": "Let's Encrypt",
+    "category": "seguridad",
+    "desc": "Autoridad certificadora gratuita que emite certificados TLS automáticamente.",
+    "site": "https://letsencrypt.org",
+    "open_source": true,
+    "license": "Apache-2",
+    "os": [
+      "linux",
+      "macos",
+      "windows"
+    ],
+    "free_plan": "Sí: código abierto y sin coste propio según la fuente. Verificar antes de depender de él.",
+    "is_free": true,
+    "paid_from": "Sin coste propio.",
+    "ai": false,
+    "requires_account": false,
+    "card_required": false,
+    "pros": [
+      "Certificados gratis",
+      "Automatizable con Certbot"
+    ],
+    "cons": [
+      "Requiere renovación automatizada"
+    ],
+    "alternatives": [
+      "opencode",
+      "vscode"
+    ],
+    "source": "https://letsencrypt.org",
+    "last_verified": "2026-11-19",
+    "verified": false
+  },
+  {
+    "id": "vaultwarden",
+    "name": "Vaultwarden",
+    "category": "seguridad",
+    "desc": "Servidor de contraseñas compatible con Bitwarden, ligero y autohospedado.",
+    "site": "https://github.com/dani-garcia/vaultwarden",
+    "open_source": true,
+    "license": "AGPL",
+    "os": [
+      "linux",
+      "macos",
+      "windows"
+    ],
+    "free_plan": "Sí: código abierto y sin coste propio según la fuente. Verificar antes de depender de él.",
+    "is_free": true,
+    "paid_from": "Sin coste propio.",
+    "ai": false,
+    "requires_account": false,
+    "card_required": false,
+    "pros": [
+      "Tus contraseñas en casa",
+      "Muy ligero",
+      "Gratis y OSS"
+    ],
+    "cons": [
+      "Requiere HTTPS y copias de seguridad"
+    ],
+    "alternatives": [
+      "opencode",
+      "vscode"
+    ],
+    "source": "https://github.com/dani-garcia/vaultwarden",
+    "last_verified": "2026-11-19",
+    "verified": false
+  },
+  {
+    "id": "helix",
+    "name": "Helix",
+    "category": "editores",
+    "desc": "Editor modal de terminal con LSP y selección múltiple listo para usar.",
+    "site": "https://helix-editor.com",
+    "open_source": true,
+    "license": "MPL-2",
+    "os": [
+      "linux",
+      "macos",
+      "windows"
+    ],
+    "free_plan": "Sí: código abierto y sin coste propio según la fuente. Verificar antes de depender de él.",
+    "is_free": true,
+    "paid_from": "Sin coste propio.",
+    "ai": false,
+    "requires_account": false,
+    "card_required": false,
+    "pros": [
+      "Configuración mínima",
+      "Muy rápido",
+      "Gratis y OSS"
+    ],
+    "cons": [
+      "Modal: requiere aprender atajos"
+    ],
+    "alternatives": [
+      "vscode",
+      "vscodium"
+    ],
+    "source": "https://helix-editor.com",
+    "last_verified": "2026-11-19",
+    "verified": false
+  },
+  {
+    "id": "ollama",
+    "name": "Ollama",
+    "category": "agentes-ia",
+    "desc": "Ejecuta modelos de lenguaje localmente con un solo comando, sin API de pago.",
+    "site": "https://ollama.com",
+    "open_source": true,
+    "license": "MIT",
+    "os": [
+      "linux",
+      "macos",
+      "windows"
+    ],
+    "free_plan": "Sí: código abierto y sin coste propio según la fuente. Verificar antes de depender de él.",
+    "is_free": true,
+    "paid_from": "Sin coste propio.",
+    "ai": true,
+    "requires_account": false,
+    "card_required": false,
+    "pros": [
+      "Modelos en tu PC",
+      "Sin coste por token",
+      "Gratis y OSS"
+    ],
+    "cons": [
+      "Necesita RAM/CPU considerable"
+    ],
+    "alternatives": [
+      "opencode",
+      "claude-code"
+    ],
+    "source": "https://ollama.com",
+    "last_verified": "2026-11-19",
+    "verified": false
+  },
+  {
+    "id": "langchain",
+    "name": "LangChain",
+    "category": "agentes-ia",
+    "desc": "Framework para construir aplicaciones con modelos de lenguaje y herramientas.",
+    "site": "https://www.langchain.com",
+    "open_source": true,
+    "license": "MIT",
+    "os": [
+      "linux",
+      "macos",
+      "windows"
+    ],
+    "free_plan": "Sí: código abierto y sin coste propio según la fuente. Verificar antes de depender de él.",
+    "is_free": true,
+    "paid_from": "Sin coste propio.",
+    "ai": true,
+    "requires_account": false,
+    "card_required": false,
+    "pros": [
+      "Muchos componentes",
+      "Gratis y OSS"
+    ],
+    "cons": [
+      "API extensa y cambiante"
+    ],
+    "alternatives": [
+      "opencode",
+      "claude-code"
+    ],
+    "source": "https://www.langchain.com",
+    "last_verified": "2026-11-19",
+    "verified": false
+  },
+  {
+    "id": "n8n",
+    "name": "n8n",
+    "category": "agentes-ia",
+    "desc": "Automatización visual con nodos: conecta apps, IA y flujos; self-host gratis.",
+    "site": "https://n8n.io",
+    "open_source": true,
+    "license": "Fair-code",
+    "os": [
+      "linux",
+      "macos",
+      "windows"
+    ],
+    "free_plan": "Sí: código abierto y sin coste propio según la fuente. Verificar antes de depender de él.",
+    "is_free": true,
+    "paid_from": "Sin coste propio.",
+    "ai": true,
+    "requires_account": false,
+    "card_required": false,
+    "pros": [
+      "Interfaz visual",
+      "Autohospedable",
+      "Plan gratis"
+    ],
+    "cons": [
+      "Nodos avanzados pueden requerir pago"
+    ],
+    "alternatives": [
+      "opencode",
+      "claude-code"
+    ],
+    "source": "https://n8n.io",
+    "last_verified": "2026-11-19",
+    "verified": false
+  },
+  {
+    "id": "expo",
+    "name": "Expo",
+    "category": "movil",
+    "desc": "Plataforma para crear apps React Native y publicarlas sin configurar entornos nativos.",
+    "site": "https://expo.dev",
+    "open_source": true,
+    "license": "MIT",
+    "os": [
+      "linux",
+      "macos",
+      "windows"
+    ],
+    "free_plan": "Sí: código abierto y sin coste propio según la fuente. Verificar antes de depender de él.",
+    "is_free": true,
+    "paid_from": "Sin coste propio.",
+    "ai": false,
+    "requires_account": false,
+    "card_required": false,
+    "pros": [
+      "Muy rápido para empezar",
+      "Gratis y OSS"
+    ],
+    "cons": [
+      "Servicios de build tienen cuotas gratis"
+    ],
+    "alternatives": [
+      "kivy",
+      "flutter"
+    ],
+    "source": "https://expo.dev",
+    "last_verified": "2026-11-19",
+    "verified": false
+  },
+  {
+    "id": "ionic",
+    "name": "Ionic",
+    "category": "movil",
+    "desc": "SDK de UI multiplataforma con Web Components para web, Android e iOS.",
+    "site": "https://ionicframework.com",
+    "open_source": true,
+    "license": "MIT",
+    "os": [
+      "linux",
+      "macos",
+      "windows"
+    ],
+    "free_plan": "Sí: código abierto y sin coste propio según la fuente. Verificar antes de depender de él.",
+    "is_free": true,
+    "paid_from": "Sin coste propio.",
+    "ai": false,
+    "requires_account": false,
+    "card_required": false,
+    "pros": [
+      "Un código, varias plataformas",
+      "Gratis y OSS"
+    ],
+    "cons": [
+      "Rendimiento inferior a nativo"
+    ],
+    "alternatives": [
+      "kivy",
+      "flutter"
+    ],
+    "source": "https://ionicframework.com",
+    "last_verified": "2026-11-19",
+    "verified": false
+  },
+  {
+    "id": "inkscape",
+    "name": "Inkscape",
+    "category": "diseno",
+    "desc": "Editor de gráficos vectoriales profesional y gratuito.",
+    "site": "https://inkscape.org",
+    "open_source": true,
+    "license": "GPL-2",
+    "os": [
+      "linux",
+      "macos",
+      "windows"
+    ],
+    "free_plan": "Sí: código abierto y sin coste propio según la fuente. Verificar antes de depender de él.",
+    "is_free": true,
+    "paid_from": "Sin coste propio.",
+    "ai": false,
+    "requires_account": false,
+    "card_required": false,
+    "pros": [
+      "SVG nativo",
+      "Muy capaz",
+      "Gratis y OSS"
+    ],
+    "cons": [
+      "Interfaz densa"
+    ],
+    "alternatives": [
+      "stitch",
+      "figma"
+    ],
+    "source": "https://inkscape.org",
+    "last_verified": "2026-11-19",
+    "verified": false
   }
 ]
