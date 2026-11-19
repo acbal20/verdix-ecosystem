@@ -7,6 +7,7 @@ const SAVE_KEY = 'verdix_ben10_save_v1';
 
 const SAVE_DEFAULTS = {
   muted: false,
+  quality: 'high',
   aliens: {},           // { heatblast: true, ... }
   coins: 150,
   gems: 5,
@@ -14,6 +15,9 @@ const SAVE_DEFAULTS = {
   modules: { mega: false, shield: false, revive: false, double: false },
   skin: 'ben',
   playerName: 'JUGADOR',
+  friends: [],
+  moderators: [],
+  controls: { stickSize: 118, btnSize: 68, scale: 100, layout: 'right' },
   totalKills: 0,
   storyProgress: 0,
   plays: 0,

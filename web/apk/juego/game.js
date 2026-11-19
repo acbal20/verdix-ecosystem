@@ -150,6 +150,7 @@ function spawnPlayer() {
     dashT: 0, dashCd: 0, dashDir: new THREE.Vector3(0, 0, -1),
     spinT: 0, spinTick: 0, spinType: '',
     shieldT: 0, rapidT: 0, magnetT: 0, x2T: 0, rageT: 0,
+    omniShieldCd: 0, healCd: 0,
     walk: 0, attackAnim: 0, hitAnim: 0, moving: false, dead: false
   };
 
@@ -668,6 +669,8 @@ function updatePlayer(dt) {
   P.magnetT = Math.max(0, P.magnetT - dt);
   P.x2T = Math.max(0, P.x2T - dt);
   P.rageT = Math.max(0, P.rageT - dt);
+  P.omniShieldCd = Math.max(0, P.omniShieldCd - dt);
+  P.healCd = Math.max(0, P.healCd - dt);
 
   const f = FORMS[P.form];
   const god = isGodUser();
@@ -744,6 +747,15 @@ function updatePlayer(dt) {
       P.spinTick = 0.11;
       spinDamage();
     }
+  }
+
+  // Cooldowns de habilidades en los botones
+  if (G.time - (G._abilUi || 0) > 0.2) {
+    G._abilUi = G.time;
+    const bs = document.getElementById('btnShield');
+    if (bs) { const cd = P.omniShieldCd || 0; bs.disabled = cd > 0; bs.textContent = cd > 0 ? Math.ceil(cd) + 's' : 'ESCUDO'; }
+    const bh = document.getElementById('btnHeal');
+    if (bh) { const cd = P.healCd || 0; bh.disabled = cd > 0; bh.textContent = cd > 0 ? Math.ceil(cd) + 's' : 'CURAR'; }
   }
 }
 

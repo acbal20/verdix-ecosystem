@@ -236,3 +236,41 @@ canvas#game { display: block; width: 100vw; height: 100vh; touch-action: none; o
 .storyCard.locked { opacity: .38; filter: grayscale(1); cursor: not-allowed; }
 .storyCard.done { border-color: var(--gold); box-shadow: 0 0 22px rgba(255,215,0,.18); }
 .storyActions { margin-top: 6px; }
+
+
+/* ==== Marca VERDIX (∞ distinto del ojo de Modo Dios) ==== */
+.verdixBrand {
+  display: flex; align-items: center; gap: 10px; margin-bottom: 2px;
+  padding: 6px 14px; border-radius: 999px;
+  border: 1px solid rgba(99,255,150,.35);
+  background: rgba(0,30,15,.55);
+  box-shadow: 0 0 24px rgba(99,255,150,.18);
+}
+.verdixBrand img { filter: drop-shadow(0 0 8px rgba(99,255,150,.8)); }
+.verdixBrand span {
+  font-weight: 900; letter-spacing: .28em; font-size: .78rem; color: #bfffd4;
+  text-shadow: 0 0 12px rgba(99,255,150,.55);
+}
+
+/* ==== Habilidades nuevas ==== */
+.abilRow { display: flex; gap: 8px; }
+.tbtn.util {
+  width: 58px; height: 58px; font-size: .55rem;
+  border-color: rgba(99,255,150,.6); color: #bfffd4;
+}
+.tbtn.util.heal { border-color: rgba(255,122,182,.6); color: #ffd0e4; }
+.tbtn.util:disabled { opacity: .45; cursor: default; }
+
+/* ==== Controles personalizables (guardados en SAVE.controls) ==== */
+#touch { --stick-size: 118px; --btn-size: 68px; --ctrl-scale: 1; }
+#stick { width: var(--stick-size); height: var(--stick-size); }
+#knob {
+  width: calc(var(--stick-size) * .44); height: calc(var(--stick-size) * .44);
+  top: calc(var(--stick-size) * .28); left: calc(var(--stick-size) * .28);
+}
+.tbtn { width: var(--btn-size); height: var(--btn-size); font-size: calc(.7rem * var(--ctrl-scale)); }
+.tbtn.alt { width: calc(var(--btn-size) * 1.12); height: calc(var(--btn-size) * 1.12); }
+.tbtn.dash { width: var(--btn-size); height: var(--btn-size); }
+.tbtn.util { width: calc(var(--btn-size) * .85); height: calc(var(--btn-size) * .85); font-size: calc(.55rem * var(--ctrl-scale)); }
+#touch.layout-left #stick { left: auto; right: 18px; }
+#touch.layout-left #actions { right: auto; left: 18px; align-items: flex-start; }

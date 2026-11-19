@@ -6,6 +6,7 @@
   <title>Verdix — Ecosistema Futurista</title>
   <meta name="description" content="Verdix es un ecosistema futurista: navegador, buscador, inteligencia artificial y sistema operativo ligero para cualquier PC." />
   <meta name="theme-color" content="#030609" />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com data:; img-src 'self' data: blob: https:; media-src 'self' blob: data: https:; connect-src 'self' https:; frame-src 'self' https: http:; object-src 'none'; base-uri 'self';">
   <link rel="icon" type="image/png" href="/icon-192.png" />
   <link rel="apple-touch-icon" href="/icon-192.png" />
   <link rel="manifest" href="/manifest.json" />
@@ -354,6 +355,61 @@
             <summary>¿Puedo usar Verdix sin conexión?</summary>
             <p>La app web funciona como PWA y guarda una copia de la interfaz. Las búsquedas y la IA sí necesitan internet.</p>
           </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- Verdix OS · estado real -->
+    <section id="os">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <span class="eyebrow">Sistema operativo</span>
+          <h2>Verdix OS 1.0 <span class="grad">«Mahoraga»</span></h2>
+          <p>ISO basada en Lubuntu 24.04, escritorio ligero y toda la identidad verde neón del ecosistema. Diseñada para PCs de bajos recursos.</p>
+        </div>
+
+        <div class="features">
+          <div class="feature reveal">
+            <div class="icon">✅</div>
+            <h4>ISO construida</h4>
+            <p>4.2 GB · arranque BIOS/UEFI · SHA-256 publicado en el registro del proyecto.</p>
+          </div>
+          <div class="feature reveal">
+            <div class="icon">✅</div>
+            <h4>Arranque verificado</h4>
+            <p>Probada en QEMU con KVM: el kernel y el escritorio inician correctamente.</p>
+          </div>
+          <div class="feature reveal">
+            <div class="icon">✅</div>
+            <h4>Identidad completa</h4>
+            <p>Wallpapers, Plymouth animado, menú GRUB, iconos y apps con branding Verdix.</p>
+          </div>
+          <div class="feature reveal">
+            <div class="icon">⏳</div>
+            <h4>Prueba en hardware real</h4>
+            <p>Antes de publicarla como descarga, se instala y prueba en un equipo físico.</p>
+          </div>
+        </div>
+
+        <div class="reveal" style="margin-top:26px;background:rgba(5,20,12,.55);border:1px solid rgba(90,255,160,.22);border-radius:16px;padding:22px 24px;">
+          <div style="display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:10px;">
+            <b style="letter-spacing:.08em;">PROGRESO DEL PROYECTO</b>
+            <span style="color:#63ff96;font-weight:700;">85%</span>
+          </div>
+          <div style="height:12px;border-radius:999px;background:rgba(255,255,255,.08);overflow:hidden;">
+            <div style="width:85%;height:100%;background:linear-gradient(90deg,#0b6b3a,#63ff96);box-shadow:0 0 18px rgba(99,255,150,.55);"></div>
+          </div>
+          <ul style="margin:16px 0 0;padding-left:20px;line-height:1.9;">
+            <li>✅ ISO generada y validada (xorriso + QEMU/KVM)</li>
+            <li>✅ Branding: infinito verde neón, GRUB, Plymouth e iconos</li>
+            <li>✅ Apps: Verdix Browser, AI, herramientas del sistema</li>
+            <li>⏳ Instalación y prueba en un PC real (siguiente paso)</li>
+            <li>⏳ Descarga pública: requiere alojamiento para 4.2 GB</li>
+          </ul>
+          <div class="hero-actions" style="margin-top:18px;">
+            <a class="btn btn-primary" href="download.html">Ver descargas</a>
+            <a class="btn btn-ghost" href="benchmark/">Ver rendimiento real</a>
+          </div>
         </div>
       </div>
     </section>

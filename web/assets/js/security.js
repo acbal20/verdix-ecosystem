@@ -203,7 +203,7 @@ const VerdixSecurity = (function () {
     const device = detectDevice();
 
     // Aplicar clases al body para estilos adaptativos
-    document.body.classList.add(
+    [
       device.isMobile ? "device-mobile" : "",
       device.isTablet ? "device-tablet" : "",
       device.isDesktop ? "device-desktop" : "",
@@ -211,7 +211,7 @@ const VerdixSecurity = (function () {
       device.isFirefox ? "browser-firefox" : "",
       device.isSafari ? "browser-safari" : "",
       device.isEdge ? "browser-edge" : ""
-    );
+    ].filter(Boolean).forEach(function (c) { document.body.classList.add(c); });
 
     // Proteger formularios contra XSS
     document.addEventListener("submit", (e) => {

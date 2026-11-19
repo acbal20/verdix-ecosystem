@@ -69,6 +69,10 @@
   <div id="touch">
     <div id="stick"><div id="knob"></div></div>
     <div id="actions">
+      <div class="abilRow">
+        <button id="btnShield" class="tbtn util" title="Escudo Omni (Q)">ESCUDO</button>
+        <button id="btnHeal" class="tbtn util heal" title="Curación (F)">CURAR</button>
+      </div>
       <button id="btnDash" class="tbtn dash">ESQUIVA</button>
       <button id="btnB" class="tbtn alt">PODER</button>
       <button id="btnA" class="tbtn">GOLPE</button>
@@ -89,6 +93,7 @@
       <button id="menuMuteBtn" class="iconBtn" title="Sonido">🔊</button>
     </div>
 
+    <div class="verdixBrand"><img src="verdix-infinity.svg" alt="VERDIX" width="42" height="42" decoding="async"><span>VERDIX</span></div>
     <div class="tag">Omnitrix Battle · 3D</div>
     <h1 class="title">BEN <span class="ten">10</span></h1>
     <p class="sub">Transformate. Peleá. Salvá el día.</p>
@@ -124,7 +129,7 @@
       <div><span id="bestVal">0</span><small>RÉCORD</small></div>
       <div><span id="bestWaveVal">0</span><small>MEJOR OLEADA</small></div>
     </div>
-    <p class="hint">Cámara cenital 3D tipo GTA · 7 aliens · audio sintetizado sin internet</p>
+    <p class="hint">Cámara cenital 3D · 7 aliens · Q escudo · F curación · SHIFT esquiva</p>
     <span class="version">v3.0 · Omnitrix Games</span>
     <div class="credito">
       Creado por <a href="https://verdix-ecosystem.vercel.app/" target="_blank">Verdix</a>
@@ -149,6 +154,22 @@
     </div>
 
     <div id="profileMsg" class="profileMsg hidden"></div>
+  </div>
+
+  <!-- ================= AMIGOS (local, sin cuenta) ================= -->
+  <div id="friendsScreen" class="overlay neonOverlay hidden">
+    <div class="tag">Amigos VERDIX</div>
+    <h1 class="title small">TUS AMIGOS</h1>
+    <p class="sub">Guardamos tus amigos en este dispositivo. Sin cuenta, sin correo, gratis.</p>
+    <div class="nameCard">
+      <label for="friendNameInput">Nombre del amigo</label>
+      <input type="text" id="friendNameInput" maxlength="16" placeholder="Ej: Yeremy">
+    </div>
+    <button id="btnAddFriend" class="btn big">➕ AGREGAR AMIGO</button>
+    <div id="friendsList" class="rankingList" style="margin-top:14px;max-height:240px;overflow:auto;"></div>
+    <div class="storyActions row" style="margin-top:14px;">
+      <button id="btnBackFriends" class="btn big ghost">VOLVER</button>
+    </div>
   </div>
 
   <!-- ================= MODO HISTORIA ================= -->
@@ -284,7 +305,7 @@
   <!-- ================= TIENDA DE PERSONAJES ================= -->
   <div id="charStoreScreen" class="overlay neonOverlay hidden">
     <div class="tag">Tienda de Personajes</div>
-    <h1 class="title small">PERSONAJES OMNITRIX</div>
+    <h1 class="title small">PERSONAJES OMNITRIX</h1>
     <p class="sub">Desbloquea personajes con monedas 🪙 o diamantes 💎</p>
 
     <div id="charStore" class="charStore"></div>

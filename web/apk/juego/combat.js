@@ -557,6 +557,19 @@ function killEnemy(e) {
 /* ------------------------------------------------------------
    botines
    ------------------------------------------------------------ */
+function dropChances() {
+  // Probabilidades reales de botín (suman 100%). Antes faltaba esta función
+  // y cada baja de enemigo lanzaba ReferenceError (sin botines).
+  return [
+    { id: 'coins', pct: 46 },
+    { id: 'health', pct: 14 },
+    { id: 'energy', pct: 12 },
+    { id: 'power', pct: 8 },
+    { id: 'gem', pct: 2 },
+    { id: 'nothing', pct: 18 }
+  ];
+}
+
 function rollDrop() {
   const table = dropChances();
   let r = Math.random() * 100, acc = 0;
@@ -779,4 +792,36 @@ function updateVFX(dt) {
       v.mesh.material.opacity = f;
     }
   }
+}
+
+
+/* ------------------------------------------------------------
+   Habilidades VERDIX: Escudo Omni y Curación
+   ------------------------------------------------------------ */
+function castShield() {
+  if (!P || P.dead) return;
+  if (P.omniShieldCd > 0) { AudioEngine.sfx('error'); return; }
+  if (G.omni < 25) { AudioEngine.sfx('error'); UI.toast('Sin energía para el escudo (25)'); return; }
+  G.omni -= 25;
+  P.omniShieldCd = 20;
+  P.shieldT = Math.max(P.shieldT, 5);
+  UI.toast('ESCUDO OMNI · 5 segundos');
+  AudioEngine.sfx('power');
+  Engine.burst(P.pos.x, 1.0, P.pos.z, 0x63ff96, 34, 7, 0.5, 0.6, 6);
+  Engine.addShake(0.25);
+}
+
+function castHeal() {
+  if (!P || P.dead) return;
+  if (P.healCd > 0) { AudioEngine.sfx('error'); return; }
+  if (P.hp >= P.maxHp) { AudioEngine.sfx('error'); UI.toast('La vida ya está al máximo'); return; }
+  if (G.omni < 35) { AudioEngine.sfx('error'); UI.toast('Sin energía para curar (35)'); return; }
+  G.omni -= 35;
+  P.healCd = 30;
+  const amount = Math.max(1, Math.round(P.maxHp * 0.3));
+  P.hp = Math.min(P.maxHp, P.hp + amount);
+  UI.toast('CURACIÓN +' + amount + ' HP');
+  AudioEngine.sfx('pickup');
+  Engine.burst(P.pos.x, 1.2, P.pos.z, 0x7affc0, 28, 6, 0.5, 0.7, 6);
+  UI.refresh();
 }

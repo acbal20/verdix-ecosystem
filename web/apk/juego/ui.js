@@ -158,11 +158,59 @@ const UI = (function () {
 
   /* ---------- Inicialización / boot ---------- */
 
+  function esc(t) { const d = document.createElement('div'); d.textContent = String(t == null ? '' : t); return d.innerHTML; }
+
+  function applyControls() {
+    const touch = $('touch'); if (!touch) return;
+    const c = (typeof SAVE !== 'undefined' && SAVE.controls) ? SAVE.controls : {};
+    touch.style.setProperty('--stick-size', (c.stickSize || 118) + 'px');
+    touch.style.setProperty('--btn-size', (c.btnSize || 68) + 'px');
+    touch.style.setProperty('--ctrl-scale', String((c.scale || 100) / 100));
+    touch.classList.toggle('layout-left', c.layout === 'left');
+    const vals = { ctrlStickSize: c.stickSize || 118, ctrlBtnSize: c.btnSize || 68, ctrlScale: c.scale || 100 };
+    Object.keys(vals).forEach(id => { const e = $(id); if (e) e.value = vals[id]; });
+  }
+
+  function renderFriends() {
+    const list = $('friendsList'); if (!list) return;
+    const fr = (typeof SAVE !== 'undefined' && Array.isArray(SAVE.friends)) ? SAVE.friends : [];
+    list.innerHTML = '';
+    if (!fr.length) { list.innerHTML = '<div class="rankingRow placeholder">Todavía no agregaste amigos.</div>'; return; }
+    fr.forEach((name, i) => {
+      const row = document.createElement('div');
+      row.className = 'rankingRow';
+      row.innerHTML = '<span class="rankPos">' + (i + 1) + '</span><span class="rankName">' + esc(name) + '</span>';
+      const del = document.createElement('button');
+      del.className = 'iconBtn'; del.textContent = '✕'; del.title = 'Quitar amigo';
+      del.addEventListener('click', () => { SAVE.friends.splice(i, 1); saveGame(); renderFriends(); toast('Amigo quitado'); });
+      row.appendChild(del);
+      list.appendChild(row);
+    });
+  }
+
+  function renderLocalRanking() {
+    const list = $('rankingList'); if (!list) return;
+    list.innerHTML = '';
+    const row = document.createElement('div');
+    row.className = 'rankingRow';
+    row.innerHTML = '<span class="rankPos">1</span><span class="rankName">' + esc((typeof SAVE !== 'undefined' && SAVE.playerName) || 'JUGADOR') + ' (tú)</span><span class="rankScore">' + ((typeof SAVE !== 'undefined' && SAVE.best) | 0) + '</span>';
+    list.appendChild(row);
+    const st = $('rankingStatus');
+    if (st) {
+      st.classList.remove('hidden');
+      st.textContent = 'Modo local: Firebase no configurado. Tu mejor puntaje se guarda en este dispositivo.';
+    }
+  }
+
   function init() {
     // Cargar stats en menú
     menuStats();
     wallet();
     alienCards();
+    applyControls();
+    const pn = $('profileName'); if (pn) pn.textContent = (typeof SAVE !== 'undefined' && SAVE.playerName) || 'JUGADOR';
+    const pb = $('profileBar'); if (pb) pb.classList.remove('hidden');
+    renderLocalRanking();
 
     // Ocultar boot, mostrar menú
     hideById('boot');
@@ -177,13 +225,53 @@ const UI = (function () {
     wire('btnOptions', () => { hideById('menu'); showById('optionsScreen'); });
     wire('shopBtn', () => { hideById('menu'); showById('shop'); });
     wire('btnCharStore', () => { hideById('menu'); showById('charStoreScreen'); });
-    wire('ctrlBtnSize', () => {});
-    wire('ctrlStickSize', () => {});
-    wire('ctrlScale', () => {});
-    wire('ctrlLayoutLeft', () => {});
-    wire('ctrlLayoutRight', () => {});
-    wire('btnResetControls', () => {});
-    wire('btnSaveControls', () => {});
+    wire('btnFriends', () => { hideById('menu'); showById('friendsScreen'); renderFriends(); });
+    wire('btnBackFriends', () => { hideById('friendsScreen'); showById('menu'); });
+    wire('btnAddFriend', () => {
+      const inp = $('friendNameInput'); if (!inp) return;
+      const name = (inp.value || '').trim().replace(/[^\p{L}\p{N} ]/gu, '').slice(0, 16);
+      if (name.length < 2) { toast('Escribí un nombre de al menos 2 caracteres', 'error'); return; }
+      if (!Array.isArray(SAVE.friends)) SAVE.friends = [];
+      if (SAVE.friends.some(f => f.toLowerCase() === name.toLowerCase())) { toast('Ese amigo ya está en la lista'); return; }
+      SAVE.friends.push(name); saveGame(); inp.value = ''; renderFriends(); toast('Amigo agregado: ' + name);
+    });
+    wire('btnChangeName', () => {
+      hideById('menu'); showById('profileScreen');
+      const inp = $('playerNameInput'); if (inp) inp.value = SAVE.playerName || '';
+      const msg = $('profileMsg'); if (msg) msg.classList.add('hidden');
+    });
+    wire('btnSaveName', () => {
+      const inp = $('playerNameInput'); if (!inp) return;
+      const name = (inp.value || '').trim().replace(/[^\p{L}\p{N} ]/gu, '').slice(0, 16);
+      const msg = $('profileMsg');
+      if (name.length < 2) { if (msg) { msg.textContent = 'Mínimo 2 caracteres (letras o números).'; msg.classList.remove('hidden'); } return; }
+      SAVE.playerName = name; saveGame();
+      const pn = $('profileName'); if (pn) pn.textContent = name;
+      hideById('profileScreen'); showById('menu'); toast('Nombre guardado: ' + name);
+      renderLocalRanking();
+    });
+    wire('btnCancelName', () => { hideById('profileScreen'); showById('menu'); });
+    wire('btnRefreshRanking', () => { renderLocalRanking(); toast('Ranking local actualizado'); });
+    wire('btnAddMod', () => {
+      const inp = $('adminNameInput'); if (!inp) return;
+      const name = (inp.value || '').trim().slice(0, 16);
+      if (name.length < 2) { toast('Nombre inválido', 'error'); return; }
+      if (!Array.isArray(SAVE.moderators)) SAVE.moderators = [];
+      if (SAVE.moderators.includes(name)) { toast('Ya es moderador'); return; }
+      SAVE.moderators.push(name); saveGame(); inp.value = '';
+      const list = $('adminList');
+      if (list) { list.innerHTML = ''; SAVE.moderators.forEach(m => { const e = document.createElement('div'); e.className = 'adminRow'; e.textContent = m; list.appendChild(e); }); }
+      toast('Moderador agregado: ' + name);
+    });
+    const persistCtrl = () => { if (typeof saveGame === 'function') saveGame(); };
+    [['ctrlBtnSize', 'btnSize'], ['ctrlStickSize', 'stickSize'], ['ctrlScale', 'scale']].forEach(([id, key]) => {
+      const e = $(id);
+      if (e) e.addEventListener('input', ev => { SAVE.controls[key] = +ev.target.value; applyControls(); });
+    });
+    wire('ctrlLayoutLeft', () => { SAVE.controls.layout = 'left'; applyControls(); toast('Controles a la izquierda'); });
+    wire('ctrlLayoutRight', () => { SAVE.controls.layout = 'right'; applyControls(); toast('Controles a la derecha'); });
+    wire('btnResetControls', () => { SAVE.controls = { stickSize: 118, btnSize: 68, scale: 100, layout: 'right' }; applyControls(); persistCtrl(); toast('Controles restaurados'); });
+    wire('btnSaveControls', () => { applyControls(); persistCtrl(); toast('Controles guardados'); });
 
     // Volver al menú
     wire('btnBackStory', () => { hideById('storyScreen'); showById('menu'); });

@@ -76,9 +76,13 @@
   window.toggleMute = toggleMute;
 
   function syncQualityUI() {
-    var hi = renderer_highQuality();
     var q = $id('optQualityBtn');
-    if (q) q.textContent = hi ? 'Alta' : 'Baja';
+    if (!q) return;
+    var quality = (typeof SAVE !== 'undefined' && SAVE.quality) || 'high';
+    q.textContent = quality === 'high' ? 'Alta' : 'Baja';
+    try {
+      Engine.renderer.setPixelRatio(quality === 'high' ? Math.min(window.devicePixelRatio || 1, 2) : 1);
+    } catch (e) {}
   }
   function renderer_highQuality() {
     try { return Engine.renderer.getPixelRatio() > 1.5; } catch (e) { return true; }
@@ -101,6 +105,10 @@
         input.attack = true; e.preventDefault(); break;
       case 'KeyK':
         useSpecial(); break;
+      case 'KeyQ':
+        castShield(); break;
+      case 'KeyF':
+        castHeal(); break;
       case 'ShiftLeft': case 'ShiftRight':
         dash(); break;
       case 'KeyE':
@@ -176,13 +184,21 @@
 
   var btnA = $id('btnA'), btnB = $id('btnB'), btnDash = $id('btnDash');
   if (btnA) {
+    var attackPulse = null;
     var aDown = function (e) { if (e) e.preventDefault(); input.attack = true; };
-    var aUp = function () { input.attack = false; };
+    var aUp = function () { clearTimeout(attackPulse); attackPulse = setTimeout(function () { input.attack = false; }, 90); };
     btnA.addEventListener('touchstart', aDown, { passive: false });
     btnA.addEventListener('touchend', aUp);
     btnA.addEventListener('mousedown', aDown);
     btnA.addEventListener('mouseup', aUp);
     btnA.addEventListener('mouseleave', aUp);
+    // Toque rápido: asegurar que el bucle vea el golpe aunque dure <1 frame
+    btnA.addEventListener('click', function (e) {
+      if (e) e.preventDefault();
+      input.attack = true;
+      clearTimeout(attackPulse);
+      attackPulse = setTimeout(function () { input.attack = false; }, 130);
+    });
   }
   if (btnB) {
     var bFire = function (e) { if (e) e.preventDefault(); useSpecial(); };
@@ -194,6 +210,17 @@
     btnDash.addEventListener('touchstart', dFire, { passive: false });
     btnDash.addEventListener('click', dFire);
   }
+  var btnShield = $id('btnShield'), btnHeal = $id('btnHeal');
+  if (btnShield) {
+    var sFire = function (e) { if (e) e.preventDefault(); castShield(); };
+    btnShield.addEventListener('touchstart', sFire, { passive: false });
+    btnShield.addEventListener('click', sFire);
+  }
+  if (btnHeal) {
+    var hFire = function (e) { if (e) e.preventDefault(); castHeal(); };
+    btnHeal.addEventListener('touchstart', hFire, { passive: false });
+    btnHeal.addEventListener('click', hFire);
+  }
 
   /* ---------- BOTONES DE HUD / OPCIONES ---------- */
   function wire(id, fn) { var e = $id(id); if (e) e.addEventListener('click', fn); }
@@ -203,11 +230,13 @@
   wire('optMuteBtn', toggleMute);
   wire('optGodBtn', function () { toggleGodMode(); this.textContent = godModeActive ? 'Activado ✅' : 'Desactivado'; });
   wire('optQualityBtn', function () {
+    var current = (typeof SAVE !== 'undefined' && SAVE.quality) || 'high';
+    var next = current === 'high' ? 'low' : 'high';
+    if (typeof SAVE !== 'undefined') { SAVE.quality = next; if (typeof saveGame === 'function') saveGame(); }
     try {
-      var hi = Engine.renderer.getPixelRatio() > 1.5;
-      Engine.renderer.setPixelRatio(hi ? 1 : Math.min(window.devicePixelRatio || 2, 2));
-      this.textContent = hi ? 'Baja' : 'Alta';
+      Engine.renderer.setPixelRatio(next === 'high' ? Math.min(window.devicePixelRatio || 1, 2) : 1);
     } catch (e) {}
+    this.textContent = next === 'high' ? 'Alta' : 'Baja';
   });
   wire('btnControls', function () { UI.hide('menu'); UI.show('controlsScreen'); });
 
