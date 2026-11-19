@@ -1,9 +1,14 @@
-/* VERDIX IMAGES — Nano Banana (Google Gemini 2.5 Flash Image) con fallback gratis.
- * Contrato: POST { prompt } -> { imageBase64, mimeType, model, engine }
- * La clave Gemini vive SOLO en Vercel (GEMINI_API_KEY). Nunca se envía al cliente.
+/* VERDIX IMAGES — generación de imágenes 100% SIN CLAVE.
+ * Motor: Pollinations Turbo (modelo gratuito; los modelos flux/etc. requieren pago).
+ * Nano Banana (Gemini 2.5 Flash Image) solo funciona con cuota de Google;
+ * esta clave gratuita devuelve 429, por eso el ecosistema usa Turbo por defecto.
+ *
+ * Contrato: POST { prompt } -> { imageBase64, mimeType, model, engine, prompt }
+ * Ante fallo: { error, engine:'pollinations-turbo', prompt } para que el cliente
+ * reintente directamente. NUNCA se simula una imagen.
  */
 
-const NANO_MODEL = process.env.NANO_BANANA_MODEL || "gemini-2.5-flash-image";
+const MODEL = "turbo";
 
 function response(status, body) {
   return new Response(JSON.stringify(body), {
@@ -16,33 +21,26 @@ function response(status, body) {
   });
 }
 
-async function nanoBanana(prompt) {
-  const key = process.env.GEMINI_API_KEY;
-  if (!key) throw new Error("sin GEMINI_API_KEY");
-  const url = `https://generativelanguage.googleapis.com/v1beta/models/${encodeURIComponent(NANO_MODEL)}:generateContent?key=${encodeURIComponent(key)}`;
+async function generar(prompt) {
+  const seed = Math.floor(Math.random() * 1_000_000);
+  const url =
+    "https://image.pollinations.ai/prompt/" + encodeURIComponent(prompt.slice(0, 700)) +
+    `?width=512&height=512&nologo=true&model=${MODEL}&seed=${seed}`;
   const ctl = new AbortController();
-  const timer = setTimeout(() => ctl.abort(), 6000);
+  const timer = setTimeout(() => ctl.abort(), 8000);
   try {
-    const r = await fetch(url, {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      signal: ctl.signal,
-      body: JSON.stringify({
-        contents: [{ role: "user", parts: [{ text: prompt }] }],
-        generationConfig: { responseModalities: ["IMAGE", "TEXT"] },
-      }),
-    });
-    const txt = await r.text();
-    if (!r.ok) throw new Error(`Gemini ${r.status}: ${txt.slice(0, 180)}`);
-    const data = JSON.parse(txt);
-    const parts = (data.candidates && data.candidates[0] && data.candidates[0].content && data.candidates[0].content.parts) || [];
-    const img = parts.find(p => p.inlineData && p.inlineData.data);
-    if (!img) throw new Error("Gemini no devolvió imagen");
+    const r = await fetch(url, { signal: ctl.signal, headers: { "User-Agent": "VERDIX/0.5" } });
+    if (!r.ok) throw new Error(`Pollinations HTTP ${r.status}`);
+    const ctype = (r.headers.get("content-type") || "image/jpeg").split(";")[0];
+    if (!ctype.startsWith("image/")) throw new Error("Pollinations no devolvió imagen");
+    const buf = Buffer.from(await r.arrayBuffer());
+    if (buf.length < 500) throw new Error("Imagen vacía");
     return {
-      imageBase64: img.inlineData.data,
-      mimeType: img.inlineData.mimeType || "image/png",
-      model: NANO_MODEL,
-      engine: "nano-banana",
+      imageBase64: buf.toString("base64"),
+      mimeType: ctype,
+      model: MODEL,
+      engine: "pollinations-turbo",
+      note: "Generación sin clave. Nano Banana requiere cuota de Google (429 en la clave gratuita).",
     };
   } finally {
     clearTimeout(timer);
@@ -60,15 +58,12 @@ module.exports = async function handler(request) {
   if (prompt.length < 3) return response(400, { error: "prompt demasiado corto" });
 
   try {
-    const out = await nanoBanana(prompt);
-    return response(200, { ...out, prompt });
+    return response(200, { ...(await generar(prompt)), prompt });
   } catch (e) {
-    // Fallback honesto: se informa del motor usado, nunca se simula Nano Banana.
-    // La clave gratuita de Gemini puede no tener cuota para imágenes (429).
     return response(200, {
       error: String(e.message || e).slice(0, 300),
-      model: "pollinations-turbo",
-      engine: "pollinations-fallback",
+      engine: "pollinations-turbo",
+      model: MODEL,
       prompt,
     });
   }
