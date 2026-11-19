@@ -1,7 +1,7 @@
 {
   "version": "0.5.0",
   "released": "2026-11-19",
-  "apkUrl": "https://github.com/acbal20/verdix-ecosystem/releases/download/v0.5.0/verdix-0.5.0-arm64-v8a.apk",
+  "apkUrl": "https://verdix-ecosystem.vercel.app/apk/verdix-0.5.0-arm64-v8a.apk",
   "changelog": [
     "VERDIX: la app ahora se llama VERDIX con logo infinito verde neón",
     "Cerebro gratis 24/7 vía proxy Vercel (sin PC encendida)",
