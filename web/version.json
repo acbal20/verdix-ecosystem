@@ -1,0 +1,16 @@
+{
+  "version": "0.2.0",
+  "released": "2026-11-19",
+  "apkUrl": "https://verdix-ecosystem.vercel.app/apk/mahoraga-0.2.0-arm64-v8a-debug.apk",
+  "changelog": [
+    "∞ Nuevo logo infinito neón en toda la app",
+    "💬 Multi-chat: crea varias conversaciones, nada se pierde",
+    "🤖 Automejora MAHORAGA: propone y aplica sus propias funciones",
+    "🔍 Búsqueda de todo el celular (busca playstore)",
+    "🎨 Genera imágenes gratis (imagen <descripción>)",
+    "💾 Historial persistente entre sesiones",
+    "🎭 Emojis y colores neón renovados",
+    "⌨️ El teclado sube sobre el input"
+  ],
+  "min_app": "0.1.0"
+}

@@ -52,3 +52,43 @@ body::after {
 /* Logo infinito (brand) */
 .brand-logo{width:34px;height:34px;border-radius:9px;box-shadow:0 0 14px rgba(0,255,65,.4),0 0 4px rgba(0,255,65,.55);display:inline-block;vertical-align:middle;margin-right:.6rem}
 @media (max-width:560px){.brand-logo{width:30px;height:30px}}
+
+/* === Mejoras SUPER top (radio, orbes vivos) === */
+.vdx-orb{position:fixed;border-radius:50%;filter:blur(70px);pointer-events:none;z-index:0;opacity:.7}
+.vdx-orb.a{width:520px;height:520px;left:-140px;top:-120px;background:radial-gradient(circle,rgba(0,255,65,.22),transparent 70%);animation:orbDrift1 22s ease-in-out infinite alternate}
+.vdx-orb.b{width:620px;height:620px;right:-180px;top:30%;background:radial-gradient(circle,rgba(191,64,255,.18),transparent 70%);animation:orbDrift2 27s ease-in-out infinite alternate}
+.vdx-orb.c{width:480px;height:480px;left:30%;bottom:-160px;background:radial-gradient(circle,rgba(55,245,255,.14),transparent 70%);animation:orbDrift3 19s ease-in-out infinite alternate}
+@keyframes orbDrift1{from{transform:translate(0,0) scale(1)}to{transform:translate(60px,80px) scale(1.15)}}
+@keyframes orbDrift2{from{transform:translate(0,0) scale(1)}to{transform:translate(-80px,60px) scale(.9)}}
+@keyframes orbDrift3{from{transform:translate(0,0) scale(1)}to{transform:translate(40px,-60px) scale(1.1)}}
+@media (prefers-reduced-motion:reduce){.vdx-orb{animation:none}}
+
+/* Glow pulsante en el orbe hero (público) */
+.hero .hero-glow{animation:heroBreath 6s ease-in-out infinite}
+@keyframes heroBreath{0%,100%{box-shadow:0 0 80px rgba(0,255,65,.25)}50%{box-shadow:0 0 120px rgba(0,255,65,.45)}}
+
+/* Badge brillante */
+.badge{position:relative;overflow:hidden}
+.badge::after{content:"";position:absolute;top:0;left:-120%;width:60%;height:100%;background:linear-gradient(100deg,transparent,rgba(255,255,255,.35),transparent);transform:skewX(-20deg);animation:badgeSheen 3.6s ease-in-out infinite}
+@keyframes badgeSheen{0%,60%{left:-120%}100%{left:220%}}
+
+/* Línea de gradiente en borde superior del header (muy sutil) */
+.site-header{border-bottom:1px solid rgba(0,255,65,.22) !important}
+.site-header::before{content:"";position:absolute;left:0;right:0;top:0;height:1px;background:linear-gradient(90deg,transparent,rgba(0,255,65,.55),transparent);pointer-events:none}
+
+/* Nav links hover con subrayado neón */
+.nav a{position:relative;padding:.35rem .65rem;border-radius:8px;transition:inherit}
+.nav a:hover{color:var(--green);background:rgba(0,255,65,.08)}
+.nav a.active{background:rgba(0,255,65,.14);color:var(--green);box-shadow:0 0 14px rgba(0,255,65,.25)}
+
+/* Botones con sombra neón al hover */
+.btn-primary{box-shadow:0 0 22px rgba(0,255,65,.35),0 8px 30px rgba(0,0,0,.6) !important}
+.btn-primary:hover{box-shadow:0 0 36px rgba(0,255,65,.55),0 12px 40px rgba(0,0,0,.7) !important}
+
+/* Card con borde animado al hover (opcional, ligero) */
+.card{position:relative;overflow:hidden}
+.card::after{content:"";position:absolute;inset:0;background:radial-gradient(400px circle at var(--mx,50%) var(--my,50%),rgba(0,255,65,.07),transparent 60%);opacity:0;transition:opacity .3s}
+.card:hover::after{opacity:1}
+
+/* Selección de texto con color neón VERDIX */
+::selection{background:rgba(0,255,65,.3);color:#eaffef}
