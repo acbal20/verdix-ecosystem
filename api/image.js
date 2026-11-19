@@ -21,7 +21,7 @@ async function nanoBanana(prompt) {
   if (!key) throw new Error("sin GEMINI_API_KEY");
   const url = `https://generativelanguage.googleapis.com/v1beta/models/${encodeURIComponent(NANO_MODEL)}:generateContent?key=${encodeURIComponent(key)}`;
   const ctl = new AbortController();
-  const timer = setTimeout(() => ctl.abort(), 45000);
+  const timer = setTimeout(() => ctl.abort(), 6000);
   try {
     const r = await fetch(url, {
       method: "POST",
@@ -63,9 +63,10 @@ module.exports = async function handler(request) {
     const out = await nanoBanana(prompt);
     return response(200, { ...out, prompt });
   } catch (e) {
-    // Fallback honesto: se informa del motor usado, nunca se simula Nano Banana
+    // Fallback honesto: se informa del motor usado, nunca se simula Nano Banana.
+    // La clave gratuita de Gemini puede no tener cuota para imágenes (429).
     return response(200, {
-      error: String(e.message || e),
+      error: String(e.message || e).slice(0, 300),
       model: "pollinations-turbo",
       engine: "pollinations-fallback",
       prompt,
