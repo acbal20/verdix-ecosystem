@@ -1,16 +1,18 @@
 {
-  "version": "0.2.0",
+  "version": "0.5.0",
   "released": "2026-11-19",
-  "apkUrl": "https://verdix-ecosystem.vercel.app/apk/mahoraga-0.2.0-arm64-v8a-debug.apk",
+  "apkUrl": "https://github.com/acbal20/verdix-ecosystem/releases/download/v0.5.0/verdix-0.5.0-arm64-v8a.apk",
   "changelog": [
-    "∞ Nuevo logo infinito neón en toda la app",
-    "💬 Multi-chat: crea varias conversaciones, nada se pierde",
-    "🤖 Automejora MAHORAGA: propone y aplica sus propias funciones",
-    "🔍 Búsqueda de todo el celular (busca playstore)",
-    "🎨 Genera imágenes gratis (imagen <descripción>)",
-    "💾 Historial persistente entre sesiones",
-    "🎭 Emojis y colores neón renovados",
-    "⌨️ El teclado sube sobre el input"
+    "VERDIX: la app ahora se llama VERDIX con logo infinito verde neón",
+    "Cerebro gratis 24/7 vía proxy Vercel (sin PC encendida)",
+    "Documentos: crea, lee, modifica, borra, comparte y descarga a Download/MAHORAGA",
+    "Imágenes: genera gratis (Pollinations) y DESCARGA a Pictures/MAHORAGA",
+    "Chatea con tus fotos: escribe «imagenes» y «muestra la ultima foto»",
+    "Contexto: «descarga la imagen», «descarga el documento», «lee el documento»",
+    "Vista previa de documentos con botones LEER / COMPARTIR / DESCARGAR",
+    "Input legible de nuevo (texto visible al escribir)",
+    "100% gratis, sin anuncios, sin registro, sin tarjeta"
   ],
-  "min_app": "0.1.0"
+  "min_app": "0.1.0",
+  "package": "org.nox.mahoraga"
 }
