@@ -1,0 +1,50 @@
+/* VERDIX DELIGHTS — retoques ligeros: fluidez, respuesta y alma */
+
+/* Tipografía fluida */
+.hero h1 { font-size: clamp(2.1rem, 6vw, 4rem) !important; line-height: 1.08 !important; letter-spacing: -0.02em !important; }
+.lead { font-size: clamp(1rem, 1.6vw, 1.2rem) !important; }
+.section h2, .section-title { font-size: clamp(1.5rem, 3vw, 2rem) !important; }
+
+/* Elevación y brillo al pasar (hover/táctil) */
+.btn { transition: transform .25s var(--transition), box-shadow .25s var(--transition), border-color .25s var(--transition); }
+.btn:hover { transform: translateY(-2px); box-shadow: var(--glow); }
+.btn-primary { position: relative; overflow: hidden; }
+.btn-primary::after {
+  content: "";
+  position: absolute; top: -50%; left: -80%; width: 50%; height: 200%;
+  background: linear-gradient(100deg, transparent, rgba(255,255,255,.55), transparent);
+  transform: rotate(20deg);
+  transition: left .6s ease;
+  pointer-events: none;
+}
+.btn-primary:hover::after { left: 130%; }
+
+.card, .panel, .workspace { transition: transform .3s var(--transition), border-color .3s var(--transition); }
+.card:hover, .panel:hover { transform: translateY(-4px); border-color: rgba(0,255,65,.4); }
+
+/* Reveal on scroll (IntersectionObserver) */
+html.js .reveal { animation: revealIn .4s ease both; }
+html.js .reveal:nth-of-type(1) { animation-delay: .02s; }
+html.js .reveal:nth-of-type(2) { animation-delay: .06s; }
+html.js .reveal:nth-of-type(3) { animation-delay: .1s; }
+@keyframes revealIn { from { opacity: 0; transform: translateY(26px); } to { opacity: 1; transform: none; } }
+@media (prefers-reduced-motion: reduce) { html.js .reveal { animation: none; } }
+
+/* Grano sutil vivo (animación lenta) */
+@keyframes drift { 0% { background-position: 0 0; } 100% { background-position: 200px 200px; } }
+body::after {
+  content: ""; position: fixed; inset: -50%; z-index: 0; pointer-events: none;
+  background: radial-gradient(600px circle at 50% 50%, rgba(0,255,65,.05), transparent 70%);
+  animation: drift 24s linear infinite alternate;
+}
+@media (prefers-reduced-motion: reduce) { body::after { animation: none; } }
+
+/* Barra superior más legible */
+.site-header { backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); }
+
+/* Móvil: botones grandes táctiles */
+@media (max-width: 560px) {
+  .btn { padding: .8rem 1rem !important; font-size: .9rem !important; }
+  .hero-actions { flex-direction: column; align-items: stretch; }
+  .hero-actions a { text-align: center; }
+}
