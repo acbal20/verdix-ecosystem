@@ -60,3 +60,13 @@ function resetSave() {
 window.SAVE = SAVE;
 window.saveGame = saveGame;
 window.resetSave = resetSave;
+
+/* ---------- Alias para compatibilidad con game.js ---------- */
+function saveUserData() { saveGame(); }
+window.saveUserData = saveUserData;
+
+/* ---------- Usuarios / admin (stub local, Firebase lo complementa) ---------- */
+const USERS = {};
+function getCurrentUser() { return (typeof SAVE !== 'undefined' && SAVE.playerName) ? SAVE.playerName : null; }
+window.USERS = USERS;
+window.getCurrentUser = getCurrentUser;

@@ -8,7 +8,7 @@
 <link rel="apple-touch-icon" href="/icon-192.png">
 <title>Ben 10: Omnitrix Battle 3D</title>
 <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="../assets/css/verdix-delights.css" />
+  <link rel="stylesheet" href="../../assets/css/verdix-delights.css" />
 </head>
 <body>
 
@@ -394,6 +394,9 @@
   window.firebaseReady = false;
   window.firebaseError = null;
 
+  // Exportamos también los helpers como globales para los scripts clásicos (game.js)
+  Object.assign(window, { ref, push, set, get, child, query, onValue, orderByChild, limitToLast });
+
   try {
     const app = initializeApp(firebaseConfig);
     window.firebaseDb = getDatabase(app);
@@ -414,6 +417,7 @@
 <script src="game.js"></script>
 <script src="combat.js"></script>
 <script src="ui.js"></script>
-  <script src="../assets/js/verdix-delights.js" defer></script>
+<script src="boot.js"></script>
+  <script src="../../assets/js/verdix-delights.js" defer></script>
 </body>
 </html>

@@ -220,3 +220,19 @@ canvas#game { display: block; width: 100vw; height: 100vh; touch-action: none; o
   .alien-card { width: 52px; height: 62px; }
   .card-icon { font-size: 1.2rem; }
 }
+
+/* ==== Modo historia ==== */
+.storyGrid { display: flex; gap: 14px; flex-wrap: wrap; justify-content: center; max-width: 860px; }
+.storyCard {
+  width: 210px; min-height: 150px; border-radius: 16px; cursor: pointer;
+  background: rgba(0,0,0,0.55); border: 2px solid var(--panel-border); color: var(--text);
+  display: flex; flex-direction: column; align-items: center; gap: 8px; padding: 16px 12px;
+  transition: transform .18s, border-color .25s, box-shadow .25s;
+}
+.storyCard:hover:not(.locked) { transform: translateY(-4px); border-color: var(--green); box-shadow: 0 10px 32px -10px rgba(57,255,20,.35); }
+.storyCard .storyNum { font-size: 2rem; font-weight: 900; color: var(--green); }
+.storyCard .storyName { font-weight: 700; font-size: .95rem; }
+.storyCard .storyGoal { color: var(--muted); font-size: .75rem; line-height: 1.45; }
+.storyCard.locked { opacity: .38; filter: grayscale(1); cursor: not-allowed; }
+.storyCard.done { border-color: var(--gold); box-shadow: 0 0 22px rgba(255,215,0,.18); }
+.storyActions { margin-top: 6px; }
