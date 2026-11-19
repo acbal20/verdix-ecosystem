@@ -48,3 +48,7 @@ body::after {
   .hero-actions { flex-direction: column; align-items: stretch; }
   .hero-actions a { text-align: center; }
 }
+
+/* Logo infinito (brand) */
+.brand-logo{width:34px;height:34px;border-radius:9px;box-shadow:0 0 14px rgba(0,255,65,.4),0 0 4px rgba(0,255,65,.55);display:inline-block;vertical-align:middle;margin-right:.6rem}
+@media (max-width:560px){.brand-logo{width:30px;height:30px}}
