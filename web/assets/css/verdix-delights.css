@@ -22,18 +22,18 @@
 .card, .panel, .workspace { transition: transform .3s var(--transition), border-color .3s var(--transition); }
 .card:hover, .panel:hover { transform: translateY(-4px); border-color: rgba(0,255,65,.4); }
 
-/* Reveal on scroll (IntersectionObserver) */
-html.js .reveal { animation: revealIn .4s ease both; }
-html.js .reveal:nth-of-type(1) { animation-delay: .02s; }
-html.js .reveal:nth-of-type(2) { animation-delay: .06s; }
-html.js .reveal:nth-of-type(3) { animation-delay: .1s; }
+/* Reveal on scroll (IntersectionObserver) — siempre visible al cargar */
+.reveal { animation: revealIn .55s ease both; }
+.reveal:nth-of-type(1) { animation-delay: .05s; }
+.reveal:nth-of-type(2) { animation-delay: .15s; }
+.reveal:nth-of-type(3) { animation-delay: .25s; }
 @keyframes revealIn { from { opacity: 0; transform: translateY(26px); } to { opacity: 1; transform: none; } }
-@media (prefers-reduced-motion: reduce) { html.js .reveal { animation: none; } }
+@media (prefers-reduced-motion: reduce) { .reveal { animation: none; } }
 
 /* Grano sutil vivo (animación lenta) */
 @keyframes drift { 0% { background-position: 0 0; } 100% { background-position: 200px 200px; } }
 body::after {
-  content: ""; position: fixed; inset: -50%; z-index: 0; pointer-events: none;
+  content: ""; position: fixed; inset: 0; z-index: 0; pointer-events: none;
   background: radial-gradient(600px circle at 50% 50%, rgba(0,255,65,.05), transparent 70%);
   animation: drift 24s linear infinite alternate;
 }
