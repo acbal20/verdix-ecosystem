@@ -1,5 +1,5 @@
 /* VERDIX Browser service worker — offline UI + navegación network-first */
-const CACHE = 'verdix-browser-v2';
+const CACHE = 'verdix-browser-v3';
 const ASSETS = [
   '/browser.html', '/index.html', '/search.html', '/ai.html',
   '/assets/css/style.css', '/assets/css/verdix-delights.css', '/assets/css/browser.css',

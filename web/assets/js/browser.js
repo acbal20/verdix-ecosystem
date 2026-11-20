@@ -115,7 +115,7 @@
   function mostrarInicio() {
     iframe.style.display = "none";
     fallback.classList.remove("show");
-    home.style.display = "grid";
+    home.style.display = "flex";
     urlInput.value = "";
     $('back-btn').disabled = true;
   }
