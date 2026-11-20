@@ -59,14 +59,30 @@ async function fetchJson(url, ms) {
 }
 
 async function buscarWikipedia(q) {
-  const url = "https://es.wikipedia.org/w/api.php?action=query&list=search&srsearch=" +
-    encodeURIComponent(q) + "&srlimit=5&format=json&origin=*";
+  const url = "https://es.wikipedia.org/w/api.php?action=query&generator=search&gsrsearch=" +
+    encodeURIComponent(q) + "&gsrlimit=5&prop=pageimages&piprop=thumbnail&pithumbsize=320" +
+    "&format=json&origin=*";
   const data = await fetchJson(url, 5000);
-  return (data.query?.search || []).map(x => ({
+  const pages = Object.values(data.query?.pages || {});
+  return pages.map(x => ({
     title: limpiar(x.title),
     url: "https://es.wikipedia.org/wiki/" + encodeURIComponent(String(x.title).replace(/ /g, "_")),
-    snippet: limpiar(x.snippet).slice(0, 220), source: "wikipedia.org", engine: "Wikipedia", score: 6
+    snippet: limpiar(x.extract || x.title).slice(0, 220),
+    thumbnail: x.thumbnail?.source || "", source: "wikipedia.org", engine: "Wikipedia", score: 6
   }));
+}
+
+async function buscarImagenes(q) {
+  const url = "https://commons.wikimedia.org/w/api.php?action=query&generator=search&gsrsearch=" +
+    encodeURIComponent(q) + "&gsrnamespace=6&gsrlimit=8&prop=imageinfo&iiprop=url" +
+    "&iiurlwidth=320&format=json&origin=*";
+  const data = await fetchJson(url, 5000);
+  return Object.values(data.query?.pages || {}).map(x => {
+    const ii = x.imageinfo?.[0] || {};
+    return { title: limpiar(x.title).replace(/^File:/, ""), url: ii.descriptionurl || ii.url || "",
+      thumbnail: ii.thumburl || ii.url || "", snippet: "Imagen de Wikimedia Commons",
+      source: "commons.wikimedia.org", engine: "Wikimedia Commons", score: 5 };
+  }).filter(x => x.url && x.thumbnail);
 }
 
 async function buscarDDG(q) {
@@ -118,7 +134,9 @@ export default async function handler(request, response) {
   const type = String(request.query?.type || "web");
 
   const propios = buscarIndice(q);
-  const consultas = [buscarWikipedia(q), buscarDDG(q), buscarHN(q)];
+  const consultas = type === "images"
+    ? [buscarImagenes(q), buscarWikipedia(q), buscarDDG(q)]
+    : [buscarWikipedia(q), buscarDDG(q), buscarHN(q)];
   const resultados = await Promise.allSettled(consultas);
   let todos = propios.slice();
   for (const r of resultados) if (r.status === "fulfilled" && Array.isArray(r.value)) todos = todos.concat(r.value);
@@ -134,7 +152,7 @@ export default async function handler(request, response) {
 
   return response.status(200).json({
     query: q, type, results: todos, count: todos.length, fallback,
-    engines: ["índice VERDIX", "Wikipedia", "DuckDuckGo", "Hacker News"],
+    engines: ["índice VERDIX", "Wikimedia", "Wikipedia", "DuckDuckGo", "Hacker News"],
     note: "Buscador propio con índice limitado y fuentes abiertas; sin claves ni servicios de pago."
   });
 }

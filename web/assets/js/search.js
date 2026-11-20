@@ -74,7 +74,7 @@
   function renderFallback(query, kind) {
     const wrap = el("div", "verdix-result-fallback");
     wrap.appendChild(el("div", "verdix-logo", "∞"));
-    wrap.appendChild(el("p", "", "Verdix Search está en modo fallback. Configura BRAVE_API_KEY en Vercel para búsquedas reales."));
+    wrap.appendChild(el("p", "", "No encontramos resultados en fuentes abiertas. Prueba uno de estos motores:"));
     const actions = el("div", "verdix-external-links");
     const targets = {
       web: [
@@ -106,6 +106,25 @@
     return wrap;
   }
 
+  function renderImages(list) {
+    const wrap = el("div", "verdix-image-grid");
+    list.forEach(item => {
+      const card = el("article", "verdix-image-card");
+      const link = el("a", "", "");
+      link.href = item.url; link.target = "_blank"; link.rel = "noopener noreferrer";
+      if (item.thumbnail) {
+        const img = el("img"); img.src = item.thumbnail; img.loading = "lazy";
+        img.alt = item.title || ""; link.appendChild(img);
+      }
+      const title = el("span", "verdix-image-title", item.title || "Ver imagen");
+      link.appendChild(title);
+      const src = el("small", "verdix-image-src", item.source || item.engine || "");
+      card.append(link, src);
+      wrap.appendChild(card);
+    });
+    return wrap;
+  }
+
   function render(kind, list) {
     resultsContainer.innerHTML = "";
     if (!list.length) {
@@ -115,6 +134,9 @@
     setStatus("", false);
     const renderers = {
       web: renderWeb,
+      images: renderImages,
+      videos: renderImages,
+      news: renderWeb,
     };
     resultsContainer.appendChild((renderers[kind] || renderWeb)(list));
   }
