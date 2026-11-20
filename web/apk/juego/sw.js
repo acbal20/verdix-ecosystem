@@ -1,5 +1,5 @@
 /* VERDIX JUEGO — cache offline de todos los recursos del juego */
-const CACHE = 'verdix-juego-v1';
+const CACHE = 'verdix-juego-v2';
 const ASSETS = [
   '/apk/juego/', '/apk/juego/index.html', '/apk/juego/style.css',
   '/apk/juego/boot.js', '/apk/juego/game.js', '/apk/juego/combat.js',
