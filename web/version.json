@@ -1,14 +1,16 @@
 {
-  "version": "0.6.2",
+  "version": "0.6.3",
   "released": "2026-11-19",
-  "apkUrl": "https://verdix-ecosystem.vercel.app/apk/verdix-0.6.2-arm64-v8a.apk",
+  "apkUrl": "https://verdix-ecosystem.vercel.app/apk/verdix-0.6.3-arm64-v8a.apk",
   "changelog": [
     "Corregido: «crea un logo de VERDIX» y frases con imagen/logo en cualquier orden generan imagen sin clave",
+    "Corregido: texto con %20/espacios del input (ADB/touch) ya no rompe el intent",
     "Corregido: cálculo de un solo número (4)",
-    "Corregido: entidades HTML en las noticias de actualización",
+    "Corregido: entidades HTML en las notificaciones de actualización",
+    "Corregido: sujeto de imagen con infinito/VERDIX",
     "Buscador propio, Browser PWA y Juego instalable incluidos",
-    "Corregido: «crea una imagen de…», «genera imagen…» y «nano banana…» funcionan sin clave",
-    "Buscador propio: índice VERDIX + Wikipedia + DuckDuckGo + Hacker News, con miniaturas y enlaces al original"
+    "Corregido: «crea un logo de VERDIX» y frases con imagen/logo en cualquier orden generan imagen sin clave",
+    "Corregido: cálculo de un solo número (4)"
   ],
   "min_app": "0.1.0",
   "package": "org.nox.mahoraga"
