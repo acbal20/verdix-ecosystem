@@ -136,6 +136,6 @@ self.addEventListener("push", (event) => {
 self.addEventListener("notificationclick", (event) => {
     event.notification.close();
     event.waitUntil(
-        clients.openWindow("https://verdix-oficial.vercel.app/ai.html")
+        clients.openWindow("https://verdix-ecosystem.vercel.app/ai.html")
     );
 });

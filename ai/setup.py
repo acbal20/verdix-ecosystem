@@ -11,7 +11,7 @@ setup(
     description="Verdix AI CLI - Asistente de IA para la terminal",
     long_description=long_description,
     long_description_content_type="text/markdown",
-    url="https://verdix-oficial.vercel.app",
+    url="https://verdix-ecosystem.vercel.app",
     packages=find_packages(),
     classifiers=[
         "Programming Language :: Python :: 3",

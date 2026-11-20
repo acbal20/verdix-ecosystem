@@ -5,7 +5,7 @@ Ecosistema tecnológico integrado, moderno, futurista, ligero y seguro para equi
 **Responsable:** Yeremy Galeano  
 **Versión:** 1.0.0 (alpha)  
 **Estado:** Desarrollo activo  
-**Sitio:** https://verdix-oficial.vercel.app  
+**Sitio:** https://verdix-ecosystem.vercel.app  
 **GitHub:** https://github.com/acbal20
 
 ## Estructura del monorepo

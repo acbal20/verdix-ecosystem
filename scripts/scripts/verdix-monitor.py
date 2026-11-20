@@ -20,7 +20,7 @@ import sys
 from datetime import datetime
 
 # Configuración
-URL_WEB = "https://verdix-oficial.vercel.app"
+URL_WEB = "https://verdix-ecosystem.vercel.app"
 INTERVALO_SEGUNDOS = 300  # 5 minutos
 ARCHIVO_LOG = "/home/yeremy/verdix-automation/logs/monitoreo.log"
 
@@ -34,7 +34,7 @@ def log(mensaje):
 def verificar_web():
     """Verifica que la web esté respondiendo"""
     try:
-        req = urllib.request.Request("https://verdix-oficial.vercel.app/index.html", 
+        req = urllib.request.Request("https://verdix-ecosystem.vercel.app/index.html", 
                                      headers={'User-Agent': 'Verdix-Monitor/1.0'})
         with urllib.request.urlopen(req, timeout=15) as respuesta:
             return respuesta.status == 200
@@ -46,7 +46,7 @@ def verificar_api_chat():
     """Verifica que el API de chat funcione"""
     try:
         req = urllib.request.Request(
-            "https://verdix-oficial.vercel.app/api/chat",
+            "https://verdix-ecosystem.vercel.app/api/chat",
             data=json.dumps({"messages": [{"role": "user", "content": "test"}]}).encode(),
             headers={'Content-Type': 'application/json', 'User-Agent': 'Verdix-Monitor/1.0'},
             method='POST'

@@ -306,12 +306,12 @@ paso_web() {
     fi
     
     PAGINAS=(
-        "https://verdix-oficial.vercel.app/index.html:Página principal"
-        "https://verdix-oficial.vercel.app/ai.html:Página IA"
-        "https://verdix-oficial.vercel.app/search.html:Página buscador"
-        "https://verdix-oficial.vercel.app/browser.html:Página navegador"
-        "https://verdix-oficial.vercel.app/download.html:Página descargas"
-        "https://verdix-oficial.vercel.app/apk/juego/index.html:Juego Ben 10"
+        "https://verdix-ecosystem.vercel.app/index.html:Página principal"
+        "https://verdix-ecosystem.vercel.app/ai.html:Página IA"
+        "https://verdix-ecosystem.vercel.app/search.html:Página buscador"
+        "https://verdix-ecosystem.vercel.app/browser.html:Página navegador"
+        "https://verdix-ecosystem.vercel.app/download.html:Página descargas"
+        "https://verdix-ecosystem.vercel.app/apk/juego/index.html:Juego Ben 10"
     )
     
     TODAS_OK=true

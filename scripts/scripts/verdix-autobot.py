@@ -143,15 +143,15 @@ class VerdixAutobot:
         self.log("\n=== VERIFICANDO SERVICIOS WEB ===")
 
         endpoints = [
-            ("https://verdix-oficial.vercel.app/index.html", "Página principal"),
-            ("https://verdix-oficial.vercel.app/ai.html", "Página IA"),
-            ("https://verdix-oficial.vercel.app/search.html", "Página buscador"),
-            ("https://verdix-oficial.vercel.app/browser.html", "Página navegador"),
-            ("https://verdix-oficial.vercel.app/download.html", "Página descargas"),
-            ("https://verdix-oficial.vercel.app/apk/juego/index.html", "Juego Ben 10 web"),
-            ("https://verdix-oficial.vercel.app/api/chat", "API Chat"),
-            ("https://verdix-oficial.vercel.app/api/search?q=test", "API Search"),
-            ("https://verdix-oficial.vercel.app/api/health", "API Health"),
+            ("https://verdix-ecosystem.vercel.app/index.html", "Página principal"),
+            ("https://verdix-ecosystem.vercel.app/ai.html", "Página IA"),
+            ("https://verdix-ecosystem.vercel.app/search.html", "Página buscador"),
+            ("https://verdix-ecosystem.vercel.app/browser.html", "Página navegador"),
+            ("https://verdix-ecosystem.vercel.app/download.html", "Página descargas"),
+            ("https://verdix-ecosystem.vercel.app/apk/juego/index.html", "Juego Ben 10 web"),
+            ("https://verdix-ecosystem.vercel.app/api/chat", "API Chat"),
+            ("https://verdix-ecosystem.vercel.app/api/search?q=test", "API Search"),
+            ("https://verdix-ecosystem.vercel.app/api/health", "API Health"),
         ]
 
         for url, nombre in endpoints:

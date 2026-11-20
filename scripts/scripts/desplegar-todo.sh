@@ -101,12 +101,12 @@ sleep 10
 
 # Verificar páginas críticas
 URLS_VERIFICAR=(
-    "https://verdix-oficial.vercel.app/index.html"
-    "https://verdix-oficial.vercel.app/ai.html"
-    "https://verdix-oficial.vercel.app/search.html"
-    "https://verdix-oficial.vercel.app/browser.html"
-    "https://verdix-oficial.vercel.app/download.html"
-    "https://verdix-oficial.vercel.app/apk/juego/index.html"
+    "https://verdix-ecosystem.vercel.app/index.html"
+    "https://verdix-ecosystem.vercel.app/ai.html"
+    "https://verdix-ecosystem.vercel.app/search.html"
+    "https://verdix-ecosystem.vercel.app/browser.html"
+    "https://verdix-ecosystem.vercel.app/download.html"
+    "https://verdix-ecosystem.vercel.app/apk/juego/index.html"
 )
 
 TODAS_OK=true
@@ -131,13 +131,13 @@ echo_color $AZUL "============================================"
 echo ""
 
 echo_color $AZUL "📋 RESUMEN DEL DESPLIEGUE:"
-echo_color $AZUL "   🌐 Web: https://verdix-oficial.vercel.app"
-echo_color $AZUL "   🧠 IA: https://verdix-oficial.vercel.app/ai.html"
-echo_color $AZUL "   🔍 Buscador: https://verdix-oficial.vercel.app/search.html"
-echo_color $AZUL "   🌐 Navegador: https://verdix-oficial.vercel.app/browser.html"
-echo_color $AZUL "   📦 Descargas: https://verdix-oficial.vercel.app/download.html"
-echo_color $AZUL "   🎮 Juego: https://verdix-oficial.vercel.app/apk/juego/index.html"
-echo_color $AZUL "   🛡️ Pruebas: https://verdix-oficial.vercel.app/test-errors.html"
+echo_color $AZUL "   🌐 Web: https://verdix-ecosystem.vercel.app"
+echo_color $AZUL "   🧠 IA: https://verdix-ecosystem.vercel.app/ai.html"
+echo_color $AZUL "   🔍 Buscador: https://verdix-ecosystem.vercel.app/search.html"
+echo_color $AZUL "   🌐 Navegador: https://verdix-ecosystem.vercel.app/browser.html"
+echo_color $AZUL "   📦 Descargas: https://verdix-ecosystem.vercel.app/download.html"
+echo_color $AZUL "   🎮 Juego: https://verdix-ecosystem.vercel.app/apk/juego/index.html"
+echo_color $AZUL "   🛡️ Pruebas: https://verdix-ecosystem.vercel.app/test-errors.html"
 echo ""
 echo_color $AZUL "📱 APKs en /home/yeremy/Escritorio/:"
 echo_color $AZUL "   - Bn 10 - Normal.apk"

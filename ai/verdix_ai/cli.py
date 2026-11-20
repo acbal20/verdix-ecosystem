@@ -20,7 +20,7 @@ from datetime import datetime
 from pathlib import Path
 
 # Configuración
-API_BASE = os.environ.get("VERDIX_API_BASE", "https://verdix-oficial.vercel.app/api")
+API_BASE = os.environ.get("VERDIX_API_BASE", "https://verdix-ecosystem.vercel.app/api")
 OPENROUTER_KEY = os.environ.get("OPENROUTER_API_KEY", "")
 TIMEOUT = 30
 
@@ -93,7 +93,7 @@ def check_security():
     try:
         context = ssl.create_default_context()
         with urllib.request.urlopen(
-            "https://verdix-oficial.vercel.app/api/health",
+            "https://verdix-ecosystem.vercel.app/api/health",
             timeout=10,
             context=context,
         ) as resp:

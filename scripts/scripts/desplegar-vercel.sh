@@ -39,4 +39,4 @@ vercel --prod
 
 echo ""
 echo "✅ Despliegue completado"
-echo "🌐 Web disponible en: https://verdix-oficial.vercel.app"
+echo "🌐 Web disponible en: https://verdix-ecosystem.vercel.app"

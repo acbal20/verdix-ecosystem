@@ -62,7 +62,7 @@ verdix-ai interactive
 | Variable | Descripción |
 |----------|-------------|
 | `OPENROUTER_API_KEY` | Clave de API de OpenRouter (requerida para la IA) |
-| `VERDIX_API_BASE` | URL base de la API (por defecto: https://verdix-oficial.vercel.app/api) |
+| `VERDIX_API_BASE` | URL base de la API (por defecto: https://verdix-ecosystem.vercel.app/api) |
 
 ## Seguridad
 
