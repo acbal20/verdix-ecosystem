@@ -239,6 +239,23 @@
     this.textContent = next === 'high' ? 'Alta' : 'Baja';
   });
   wire('btnControls', function () { UI.hide('menu'); UI.show('controlsScreen'); });
+  // PWA: instalar el juego como app (sin tienda, gratis)
+  var installPrompt = null;
+  window.addEventListener('beforeinstallprompt', function (e) { e.preventDefault(); installPrompt = e; });
+  wire('btnInstallGame', function () {
+    if (installPrompt) {
+      installPrompt.prompt();
+      installPrompt.userChoice.then(function (r) {
+        UI.toast(r && r.outcome === 'accepted' ? 'Instalando el juego…' : 'Instalación cancelada');
+        installPrompt = null;
+      });
+    } else {
+      UI.toast('En Chrome: menú ⋮ → Instalar app / Agregar a pantalla de inicio');
+    }
+  });
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('sw.js').catch(function () {});
+  }
 
   // God: mostrar el botón solo a admins/creador
   if (typeof isAdmin === 'function' && (isAdmin() || (typeof SAVE !== 'undefined' && SAVE.admin))) {
