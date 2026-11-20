@@ -175,3 +175,10 @@
   .url { order: 10; flex-basis: 100%; }
   .browser-frame { height: 62vh; min-height: 320px; }
 }
+
+/* Corrección de cascada: style.css define .browser-home como grid.
+   El ID gana siempre, sin depender del orden de carga ni del caché. */
+#browser-home.browser-home {
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+}
+#browser-home .quick-grid { width: min(700px, 96%); max-width: 96%; }
