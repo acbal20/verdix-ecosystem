@@ -1,16 +1,14 @@
 {
-  "version": "0.6.1",
+  "version": "0.6.2",
   "released": "2026-11-19",
-  "apkUrl": "https://verdix-ecosystem.vercel.app/apk/verdix-0.6.1-arm64-v8a.apk",
+  "apkUrl": "https://verdix-ecosystem.vercel.app/apk/verdix-0.6.2-arm64-v8a.apk",
   "changelog": [
+    "Corregido: «crea un logo de VERDIX» y frases con imagen/logo en cualquier orden generan imagen sin clave",
+    "Corregido: cálculo de un solo número (4)",
+    "Corregido: entidades HTML en las noticias de actualización",
+    "Buscador propio, Browser PWA y Juego instalable incluidos",
     "Corregido: «crea una imagen de…», «genera imagen…» y «nano banana…» funcionan sin clave",
-    "Buscador propio: índice VERDIX + Wikipedia + DuckDuckGo + Hacker News, con miniaturas y enlaces al original",
-    "Browser PWA instalable (pestañas, historial, UI oscura)",
-    "Juego instalable como app (manifiesto + service worker)",
-    "CLIP: adjunta archivos, imágenes y videos desde el teléfono (selector nativo)",
-    "Habilidades nuevas: agrega habilidad <qué quieres> — se prueba en sandbox y solo se inyecta si pasa",
-    "Modo offline ampliado: fecha, dados, moneda, contraseña, cálculo, conversiones, IMC, propina, interés, base64, morse y más",
-    "Generación de imágenes sin clave (Pollinations Turbo); Nano Banana/Gemini requiere cuota de pago"
+    "Buscador propio: índice VERDIX + Wikipedia + DuckDuckGo + Hacker News, con miniaturas y enlaces al original"
   ],
   "min_app": "0.1.0",
   "package": "org.nox.mahoraga"
