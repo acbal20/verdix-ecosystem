@@ -13,7 +13,7 @@ export default async function handler(request, response) {
   if (request.method === "OPTIONS") return response.status(204).end();
   if (request.method !== "GET") return response.status(405).json({ error: "Method Not Allowed" });
 
-  const ai_configured = Boolean(process.env.OPENROUTER_API_KEY);
+  const ai_configured = Boolean(process.env.OPENROUTER_API_KEY || process.env.GROQ_API_KEY);
   return response.status(200).json({
     status: "ok",
     ai_configured,
