@@ -4,7 +4,7 @@
    Detecta vulnerabilidades y las reporta
    ============================================================ */
 
-const VerdixSecurityAudit = (function () {
+const MahoragaSecurityAudit = (function () {
   const results = {
     passed: 0,
     failed: 0,
@@ -265,4 +265,4 @@ const VerdixSecurityAudit = (function () {
 })();
 
 // Exportar global
-window.VerdixSecurityAudit = VerdixSecurityAudit;
+window.MahoragaSecurityAudit = MahoragaSecurityAudit;

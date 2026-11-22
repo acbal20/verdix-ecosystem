@@ -2,7 +2,7 @@
    VERDIX SECURITY - Protección completa del sitio
    ============================================================ */
 
-const VerdixSecurity = (function () {
+const MahoragaSecurity = (function () {
   const config = {
     maxInputLength: 5000,
     allowedImageTypes: ["image/jpeg", "image/png", "image/webp", "image/gif"],
@@ -290,7 +290,7 @@ const VerdixSecurity = (function () {
 
 // Inicializar seguridad al cargar
 document.addEventListener("DOMContentLoaded", () => {
-  const sec = VerdixSecurity.init();
+  const sec = MahoragaSecurity.init();
   console.log(
     `%c[VERDIX SECURITY] Activado - Dispositivo: ${
       sec.device.isMobile ? "Móvil" : sec.device.isTablet ? "Tablet" : "Escritorio"
@@ -300,4 +300,4 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 // Exportar para uso global
-window.VerdixSecurity = VerdixSecurity;
+window.MahoragaSecurity = MahoragaSecurity;

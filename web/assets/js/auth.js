@@ -2,7 +2,7 @@
    VERDIX AUTH - Autenticación, sesiones y historial
    ============================================================ */
 
-const VerdixAuth = (function () {
+const MahoragaAuth = (function () {
   const STORAGE_KEY = "verdix_auth_user";
   const CHATS_KEY = "verdix_chats";
   const MAX_CHATS = 50;
@@ -262,8 +262,8 @@ const VerdixAuth = (function () {
 
 // Inicializar autenticación
 document.addEventListener("DOMContentLoaded", () => {
-  VerdixAuth.init();
+  MahoragaAuth.init();
 });
 
 // Exportar global
-window.VerdixAuth = VerdixAuth;
+window.MahoragaAuth = MahoragaAuth;
