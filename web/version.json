@@ -8,9 +8,7 @@
     "Corregido: cálculo de un solo número (4)",
     "Corregido: entidades HTML en las notificaciones de actualización",
     "Corregido: sujeto de imagen con infinito/VERDIX",
-    "Buscador propio, Browser PWA y Juego instalable incluidos",
-    "Corregido: «crea un logo de VERDIX» y frases con imagen/logo en cualquier orden generan imagen sin clave",
-    "Corregido: cálculo de un solo número (4)"
+    "Buscador propio, Browser PWA y Juego instalables incluidos"
   ],
   "min_app": "0.1.0",
   "package": "org.nox.mahoraga"
