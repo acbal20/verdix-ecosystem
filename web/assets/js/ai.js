@@ -1,5 +1,5 @@
 /* ============================================================
-   VERDIX AI — Cliente con markdown, imágenes y sesión Google
+   MAHORAGA — Cliente con markdown, imágenes y sesión Google
    ============================================================ */
 
 (function () {
@@ -18,7 +18,7 @@
     {
       role: "system",
       content:
-        "Eres Verdix AI, un asistente amable, claro, inteligente y útil. Respondes en el idioma del usuario, de forma concisa y precisa. Puedes ayudar con programación, preguntas generales, creatividad, soporte del ecosistema Verdix (Browser, Search, OS), generar imágenes y ejecutar comandos del sistema operativo. Siempre mantén un tono profesional pero cercano.",
+        "Eres Mahoraga, un asistente amable, claro, inteligente y útil. Respondes en el idioma del usuario, de forma concisa y precisa. Puedes ayudar con programación, preguntas generales, creatividad, soporte del ecosistema Mahoraga (Browser, Search, OS), generar imágenes y ejecutar comandos del sistema operativo. Siempre mantén un tono profesional pero cercano.",
     },
   ];
 
@@ -239,7 +239,7 @@
     } else {
       const el = addMessage(
         "assistant",
-        "No pude conectarme con Verdix AI. " + errorMessage +
+        "No pude conectarme con Mahoraga. " + errorMessage +
           "\nRevisá la configuración de la clave en el panel de Vercel.",
         true
       );

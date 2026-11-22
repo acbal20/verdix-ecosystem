@@ -8,7 +8,7 @@
     {
       role: "system",
       content:
-        "Eres Verdix AI, un asistente amable, claro y útil. Respondes en el idioma del usuario, de forma concisa y precisa.",
+        "Eres Mahoraga, un asistente amable, claro y útil. Respondes en el idioma del usuario, de forma concisa y precisa.",
     },
   ];
 
@@ -106,7 +106,7 @@
     } else {
       const el = addMessage(
         "assistant",
-        "No pude conectarme con Verdix AI. " + errorMessage +
+        "No pude conectarme con Mahoraga. " + errorMessage +
           "\nRevisá la configuración de la clave en el archivo .env."
       );
       el.classList.add("error");

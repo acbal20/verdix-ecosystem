@@ -1,5 +1,5 @@
 /* ============================================================
-   VERDIX AI — api/health
+   MAHORAGA — api/health
    Health check del ecosistema: estado de la IA + modelo activo.
    GET → { status, ai_configured, model }
    ============================================================ */

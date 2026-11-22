@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Verdix - Pruebas de Errores y Seguridad</title>
+  <title>Mahoraga - Pruebas de Errores y Seguridad</title>
   <meta name="theme-color" content="#04070a" />
   <link rel="icon" type="image/png" href="/icon-192.png" />
   <link rel="manifest" href="/manifest.json" />
@@ -77,7 +77,7 @@
 <body>
   <header class="site-header">
     <div class="wrap header-inner">
-      <a class="brand" href="index.html"><img class="brand-logo" src="/assets/icons/nox-infinity.svg" alt="Verdix" width="34" height="34" decoding="async"> VERDIX</a>
+      <a class="brand" href="index.html"><img class="brand-logo" src="/assets/icons/nox-infinity.svg" alt="Mahoraga" width="34" height="34" decoding="async"> MAHORAGA</a>
       <button class="nav-toggle" aria-label="Abrir menú" aria-expanded="false">☰</button>
       <nav class="nav">
         <a href="index.html">Inicio</a>
@@ -94,7 +94,7 @@
   <main class="tool-page">
     <div class="wrap" style="max-width:1000px">
       <div class="tool-head">
-        <span class="eyebrow">Verdix · Pruebas de Errores y Seguridad</span>
+        <span class="eyebrow">Mahoraga · Pruebas de Errores y Seguridad</span>
         <h1>Validación del Sistema</h1>
         <p>Pruebas de errores, seguridad y adaptación de dispositivo</p>
       </div>
@@ -115,7 +115,7 @@
 
       <!-- Prueba de IA -->
       <div class="test-card reveal">
-        <h3>🧠 IA (Verdix AI)</h3>
+        <h3>🧠 IA (Mahoraga)</h3>
         <div id="ai-result" class="test-result"></div>
         <button class="btn-test" onclick="testAI()">Probar IA</button>
       </div>
@@ -168,8 +168,8 @@
 
   <footer class="site-footer">
     <div class="wrap footer-inner">
-      <a class="brand" href="index.html"><img class="brand-logo" src="/assets/icons/nox-infinity.svg" alt="Verdix" width="34" height="34" decoding="async"> VERDIX</a>
-      <span>© <span data-year>2026</span> Verdix - Seguridad y Pruebas</span>
+      <a class="brand" href="index.html"><img class="brand-logo" src="/assets/icons/nox-infinity.svg" alt="Mahoraga" width="34" height="34" decoding="async"> MAHORAGA</a>
+      <span>© <span data-year>2026</span> Mahoraga - Seguridad y Pruebas</span>
     </div>
   </footer>
 
@@ -178,7 +178,7 @@
   <script>
     // Funciones de prueba
     async function testDevice() {
-      const device = VerdixSecurity.detectDevice();
+      const device = MahoragaSecurity.detectDevice();
       const el = document.getElementById("device-info");
       el.style.display = "block";
       el.className = "test-result success";
@@ -242,8 +242,8 @@
       const el = document.getElementById("xss-result");
       el.style.display = "block";
       const testInput = '<script>alert("xss")</script>';
-      const sanitized = VerdixSecurity.sanitizeInput(testInput);
-      const injection = VerdixSecurity.detectInjection(testInput);
+      const sanitized = MahoragaSecurity.sanitizeInput(testInput);
+      const injection = MahoragaSecurity.detectInjection(testInput);
       
       if (sanitized !== testInput && injection.detected) {
         el.className = "test-result success";
@@ -308,7 +308,7 @@
       let blocked = 0;
 
       for (let i = 0; i < 10; i++) {
-        if (VerdixSecurity.checkRateLimit()) {
+        if (MahoragaSecurity.checkRateLimit()) {
           success++;
         } else {
           blocked++;
@@ -318,7 +318,7 @@
       el.className = "test-result success";
       el.innerHTML = `<strong>Solicitudes permitidas:</span> ${success}<br>
         <strong>Solicitudes bloqueadas:</span> ${blocked}<br>
-        <strong>Límite:</span> ${VerdixSecurity.checkRateLimit.toString().substring(0, 50)}...`;
+        <strong>Límite:</span> ${MahoragaSecurity.checkRateLimit.toString().substring(0, 50)}...`;
     }
 
     // Ejecutar detección automática al cargar

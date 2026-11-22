@@ -3,14 +3,14 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Verdix AI</title>
-  <meta name="description" content="Chateá con Verdix AI y obtené respuestas al instante." />
+  <title>Mahoraga</title>
+  <meta name="description" content="Chateá con Mahoraga y obtené respuestas al instante." />
   <meta name="theme-color" content="#04070a" />
   <link rel="icon" type="image/png" href="/icon-192.png" />
   <link rel="apple-touch-icon" href="/icon-192.png" />
   <link rel="manifest" href="/manifest.json" />
-  <meta property="og:title" content="Verdix AI" />
-  <meta property="og:description" content="Chateá con Verdix AI y obtené respuestas al instante." />
+  <meta property="og:title" content="Mahoraga" />
+  <meta property="og:description" content="Chateá con Mahoraga y obtené respuestas al instante." />
   <meta property="og:type" content="website" />
   <meta property="og:image" content="assets/icons/icon-512.png" />
   <meta name="twitter:card" content="summary_large_image" />
@@ -348,8 +348,8 @@
   <link rel="stylesheet" href="assets/css/verdix-delights.css" />
   <script type="application/ld+json">
 {"@context":"https://schema.org","@graph":[
- {"@type":"Organization","name":"VERDIX","alternateName":["Verdix","Verdix Ecosystem","NOX"],"url":"https://verdix-ecosystem.vercel.app/","sameAs":["https://github.com/acbal20","https://github.com/acbal20/verdix-ecosystem"]},
- {"@type":"WebSite","name":"VERDIX","url":"https://verdix-ecosystem.vercel.app/","potentialAction":{"@type":"SearchAction","target":"https://verdix-ecosystem.vercel.app/search.html?q={search_term_string}","query-input":"required name=search_term_string"}}
+ {"@type":"Organization","name":"MAHORAGA","alternateName":["Mahoraga","Mahoraga Ecosystem","NOX"],"url":"https://verdix-ecosystem.vercel.app/","sameAs":["https://github.com/acbal20","https://github.com/acbal20/verdix-ecosystem"]},
+ {"@type":"WebSite","name":"MAHORAGA","url":"https://verdix-ecosystem.vercel.app/","potentialAction":{"@type":"SearchAction","target":"https://verdix-ecosystem.vercel.app/search.html?q={search_term_string}","query-input":"required name=search_term_string"}}
 ]}
 </script>
 </head>
@@ -359,7 +359,7 @@
 <div class="vdx-orb c"></div>
   <header class="site-header">
     <div class="wrap header-inner">
-      <a class="brand" href="index.html"><img class="brand-logo" src="/assets/icons/nox-infinity.svg" alt="Verdix" width="34" height="34" decoding="async"> VERDIX</a>
+      <a class="brand" href="index.html"><img class="brand-logo" src="/assets/icons/nox-infinity.svg" alt="Mahoraga" width="34" height="34" decoding="async"> MAHORAGA</a>
       <div class="auth-row">
         <button class="btn btn-ghost" id="btn-auth" onclick="toggleAuth()">Iniciar sesión</button>
         <div class="user-info" id="user-info" style="display:none;">
@@ -368,7 +368,7 @@
             <div id="user-name" style="font-weight:600; color:var(--text);">Usuario</div>
             <div id="user-email" style="font-size:0.78rem; color:var(--muted);">correo@ejemplo.com</div>
           </div>
-          <button class="btn-ghost" onclick="VerdixAuth.logout(); location.reload();" style="font-size:0.75rem;">Salir</button>
+          <button class="btn-ghost" onclick="MahoragaAuth.logout(); location.reload();" style="font-size:0.75rem;">Salir</button>
         </div>
       </div>
       <button class="nav-toggle" aria-label="Abrir menú" aria-expanded="false">☰</button>
@@ -402,7 +402,7 @@
           <div class="empty-state">
             <div class="empty-state-icon">🧠</div>
             <h3>Inicia una conversación</h3>
-            <p>Selecciona una conversación o crea una nueva para empezar a chatear con Verdix AI.</p>
+            <p>Selecciona una conversación o crea una nueva para empezar a chatear con Mahoraga.</p>
             <p style="font-size:0.85rem; margin-top:12px; color:var(--muted);">Puedes generar imágenes, ejecutar comandos, instalar paquetes y más.</p>
           </div>
         </div>
@@ -427,7 +427,7 @@
 
   <footer class="site-footer">
     <div class="wrap footer-inner">
-      <a class="brand" href="index.html"><img class="brand-logo" src="/assets/icons/nox-infinity.svg" alt="Verdix" width="34" height="34" decoding="async"> VERDIX</a>
+      <a class="brand" href="index.html"><img class="brand-logo" src="/assets/icons/nox-infinity.svg" alt="Mahoraga" width="34" height="34" decoding="async"> MAHORAGA</a>
       <div class="footer-links">
         <a href="browser.html">Browser</a>
         <a href="search.html">Search</a>
@@ -435,7 +435,7 @@
         <a href="download.html">Descargas</a>
         <a href="index.html#os">OS</a>
       </div>
-      <span>© <span data-year>2026</span> Verdix.</span>
+      <span>© <span data-year>2026</span> Mahoraga.</span>
     </div>
   </footer>
 
@@ -489,7 +489,7 @@
       fileInput.addEventListener("change", (e) => {
         if (e.target.files && e.target.files[0]) {
           const file = e.target.files[0];
-          const validation = VerdixAuth.validateFile(file);
+          const validation = MahoragaAuth.validateFile(file);
           if (!validation.valid) {
             showToast(validation.error, "error");
             fileInput.value = "";
@@ -508,19 +508,19 @@
       renderChatList();
 
       // Si no hay chat, crear uno nuevo
-      if (VerdixAuth.getChats().length === 0) {
+      if (MahoragaAuth.getChats().length === 0) {
         createNewChat();
       } else {
         // Cargar el primer chat
-        const firstChat = VerdixAuth.getChats()[0];
+        const firstChat = MahoragaAuth.getChats()[0];
         loadChat(firstChat.id);
       }
     }
 
     // Autenticación
     function updateAuthUI() {
-      const user = VerdixAuth.getCurrentUser();
-      if (user && VerdixAuth.isAuthenticated()) {
+      const user = MahoragaAuth.getCurrentUser();
+      if (user && MahoragaAuth.isAuthenticated()) {
         btnAuth.style.display = "none";
         userInfo.style.display = "flex";
         userName.textContent = user.name;
@@ -537,15 +537,15 @@
     }
 
     async function toggleAuth() {
-      if (VerdixAuth.isAuthenticated()) {
-        VerdixAuth.logout();
+      if (MahoragaAuth.isAuthenticated()) {
+        MahoragaAuth.logout();
         updateAuthUI();
         showToast("Sesión cerrada");
       } else {
         try {
-          await VerdixAuth.loginWithGoogle();
+          await MahoragaAuth.loginWithGoogle();
           updateAuthUI();
-          showToast("Sesión iniciada como " + VerdixAuth.getCurrentUser().name);
+          showToast("Sesión iniciada como " + MahoragaAuth.getCurrentUser().name);
         } catch (e) {
           showToast(e.message || "Error al iniciar sesión", "error");
         }
@@ -554,7 +554,7 @@
 
     // Chat
     function createNewChat() {
-      const chat = VerdixAuth.createChat();
+      const chat = MahoragaAuth.createChat();
       currentChatId = chat.id;
       renderChatList();
       renderMessages(chat);
@@ -565,7 +565,7 @@
 
     function loadChat(chatId) {
       currentChatId = chatId;
-      const chat = VerdixAuth.getChat(chatId);
+      const chat = MahoragaAuth.getChat(chatId);
       if (chat) {
         renderMessages(chat);
         renderChatList();
@@ -595,7 +595,7 @@
 
     function renderChatList() {
       chatList.innerHTML = "";
-      const chats = VerdixAuth.getChats();
+      const chats = MahoragaAuth.getChats();
       chats.forEach((chat) => {
         const el = document.createElement("div");
         el.className = "chat-item" + (currentChatId === chat.id ? " active" : "");
@@ -607,13 +607,13 @@
         el.oncontextmenu = (e) => {
           e.preventDefault();
           if(confirm("¿Eliminar esta conversación?")) {
-            VerdixAuth.deleteChat(chat.id);
+            MahoragaAuth.deleteChat(chat.id);
             if (currentChatId === chat.id) {
               currentChatId = null;
-              const next = VerdixAuth.getChats()[0];
+              const next = MahoragaAuth.getChats()[0];
               if (next) loadChat(next.id);
               else {
-                currentChatId = VerdixAuth.createChat().id;
+                currentChatId = MahoragaAuth.createChat().id;
                 loadChat(currentChatId);
               }
             } else {
@@ -690,7 +690,7 @@
 
       // Guardar mensaje de usuario
       if (currentChatId) {
-        VerdixAuth.addMessageToChat(currentChatId, { role: "user", content: text, file: selectedFile ? selectedFile.name : null });
+        MahoragaAuth.addMessageToChat(currentChatId, { role: "user", content: text, file: selectedFile ? selectedFile.name : null });
       }
 
       // Mostrar typing
@@ -704,7 +704,7 @@
       try {
         // Preparar datos para enviar
         const messages = [];
-        const chat = VerdixAuth.getChat(currentChatId);
+        const chat = MahoragaAuth.getChat(currentChatId);
         if (chat && chat.messages) {
           chat.messages.slice(-10).forEach(m => {
             if (m.role && m.content) messages.push({ role: m.role, content: m.content });
@@ -734,7 +734,7 @@
         addMessageToDOM("assistant", reply, imageUrl, null, true);
 
         if (currentChatId) {
-          VerdixAuth.addMessageToChat(currentChatId, { role: "assistant", content: reply, imageUrl: imageUrl });
+          MahoragaAuth.addMessageToChat(currentChatId, { role: "assistant", content: reply, imageUrl: imageUrl });
         }
 
       } catch (err) {
@@ -786,7 +786,7 @@
     window.createNewChat = createNewChat;
     window.loadChat = loadChat;
     window.toggleSidebar = toggleSidebar;
-    window.VerdixAuth = VerdixAuth;
+    window.MahoragaAuth = MahoragaAuth;
     window.toggleAuth = toggleAuth;
 
     // Iniciar
