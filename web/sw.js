@@ -1,5 +1,5 @@
 /* ============================================================
-   MAHORAGA SERVICE WORKER - PWA Offline
+   Verdix Mahoraga SERVICE WORKER - PWA Offline
    ============================================================ */
 
 const CACHE_NAME = "verdix-v1.0.0";
@@ -118,7 +118,7 @@ self.addEventListener("sync", (event) => {
 // Notificaciones push
 self.addEventListener("push", (event) => {
     const options = {
-        body: event.data ? event.data.text() : "Nueva notificación de Mahoraga",
+        body: event.data ? event.data.text() : "Nueva notificación de Verdix Mahoraga",
         icon: "/assets/icons/icon-192.png",
         badge: "/assets/icons/icon-192.png",
         vibrate: [100, 50, 100],
@@ -128,7 +128,7 @@ self.addEventListener("push", (event) => {
         },
     };
     event.waitUntil(
-        self.registration.showNotification("Mahoraga", options)
+        self.registration.showNotification("Verdix Mahoraga", options)
     );
 });
 

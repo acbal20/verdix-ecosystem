@@ -1,5 +1,5 @@
 /* ============================================================
-   MAHORAGA — api/chat
+   Verdix Mahoraga — api/chat
    Contrato: POST {messages:[{role,content},..], image?:bool}
    Respuesta: { reply, model, usage, imageUrl }
    Backend: Groq (qwen3.8-27b, directo) con fallback Gemini 3.5 Flash Lite.
@@ -51,7 +51,7 @@ export default async function handler(request, response) {
     messages.unshift({
       role: "system",
       content:
-        "Eres Mahoraga, un asistente amable, claro, inteligente y útil. Respondes en el idioma del usuario, de forma concisa y precisa. Puedes ayudar con programación, preguntas generales, creatividad, soporte del ecosistema Mahoraga (Browser, Search, OS, MAHORAGA). Cuando te pidan una imagen, responde ÚNICAMENTE con UNA descripción vívida y detallada de la imagen que el usuario quiere (eso alimentará el generador de imágenes); nunca digas que no puedes crearla. Tono profesional pero cercano.",
+        "Eres Verdix Mahoraga, un asistente amable, claro, inteligente y útil. Respondes en el idioma del usuario, de forma concisa y precisa. Puedes ayudar con programación, preguntas generales, creatividad, soporte del ecosistema Verdix Mahoraga (Browser, Search, OS, Verdix Mahoraga). Cuando te pidan una imagen, responde ÚNICAMENTE con UNA descripción vívida y detallada de la imagen que el usuario quiere (eso alimentará el generador de imágenes); nunca digas que no puedes crearla. Tono profesional pero cercano.",
     });
   }
 
