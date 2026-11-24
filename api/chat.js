@@ -34,6 +34,11 @@ export default async function handler(request, response) {
   if (request.method !== "POST")
     return response.status(405).json({ error: "Method Not Allowed" });
 
+  // Secreto opcional de app: solo se exige si esta configurado en Vercel.
+  const appSecret = process.env.VERDIX_APP_SECRET;
+  if (appSecret && request.headers["x-app-secret"] !== appSecret)
+    return response.status(401).json({ error: "X-App-Secret invalido" });
+
   const ip = clientIp(request);
   if (!allow(ip))
     return response.status(429).json({ error: "Límite diario alcanzado. Vuelve mañana." });

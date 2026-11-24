@@ -54,7 +54,7 @@ export default async function handler(request, response) {
     const out = await generar(prompt);
     return response.status(200).json({ ...out, prompt });
   } catch (e) {
-    return response.status(200).json({
+    return response.status(502).json({
       error: String(e.message || e).slice(0, 300),
       engine: "pollinations-turbo",
       model: MODEL,

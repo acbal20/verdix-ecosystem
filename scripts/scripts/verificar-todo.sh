@@ -22,23 +22,21 @@ echo_color() {
     echo -e "${1}${2}${NC}"
 }
 
+REPO_ROOT="$(cd "$(dirname "$0")/../.." && pwd)"
+
 echo_color $AZUL "🔍 Iniciando validación completa del ecosistema Verdix..."
 echo ""
 
 # Paso 1: Verificar que existan los archivos críticos
 echo_color $AZUL "📋 Paso 1: Verificando archivos críticos..."
 ARCHIVOS_CRITICOS=(
-    "/home/yeremy/verdix-web/index.html"
-    "/home/yeremy/verdix-web/ai.html"
-    "/home/yeremy/verdix-web/search.html"
-    "/home/yeremy/verdix-web/browser.html"
-    "/home/yeremy/verdix-web/api/chat.js"
-    "/home/yeremy/verdix-web/api/search.js"
-    "/home/yeremy/Ben10_Web/index.html"
-    "/home/yeremy/Escritorio/Bn 10 - Normal.apk"
-    "/home/yeremy/Escritorio/Bn 10 - Modo Dios.apk"
-    "/home/yeremy/Escritorio/Ben10_Omnitrix_Battle.zip"
-    "/home/yeremy/Escritorio/Verdix_OS_Debian.iso"
+    "$REPO_ROOT/web/index.html"
+    "$REPO_ROOT/web/ai.html"
+    "$REPO_ROOT/web/search.html"
+    "$REPO_ROOT/web/browser.html"
+    "$REPO_ROOT/api/chat.js"
+    "$REPO_ROOT/api/search.js"
+    "$REPO_ROOT/vercel.json"
 )
 
 ARCHIVOS_FALTANTES=0

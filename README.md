@@ -13,13 +13,18 @@ Ecosistema tecnológico integrado, moderno, futurista, ligero y seguro para equi
 ```
 verdix-ecosystem/
 ├── web/           # Verdix Web: backend (server.py, puerto 8099) + frontend desplegable
-│   ├── server.py         # Servidor HTTP + API /api/chat, /api/search, /api/health
-│   ├── api/              # API serverless (chat.js, search.js)
+│   ├── server.py         # Servidor local (puerto 8099)
 │   ├── assets/           # CSS, JS, imágenes
 │   ├── *.html            # Páginas: index, ai, browser, search, download, 404, etc.
 │   ├── sw.js             # Service Worker (PWA)
 │   ├── manifest.json     # Manifiesto PWA
 │   └── .env.example      # Plantilla de variables (rellenar en .env, no subir)
+├── api/                  # API serverless (Vercel)
+│   ├── chat.js           # IA (Groq/Gemini) con rate limit
+│   ├── search.js         # Buscador
+│   ├── health.js         # Estado y proveedores de IA
+│   ├── image.js          # Generación de imágenes
+│   └── version.js        # Versión pública (web/version.json)
 ├── ai/             # Verdix AI CLI (verdix_ai/)
 │   ├── verdix_ai/        # cli.py: chat, imagen, exec, install, update, seguridad
 │   ├── setup.py          # Instalador Python
